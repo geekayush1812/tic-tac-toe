@@ -3,6 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root{
+  --primaryColor900: hsl(274, 28%, 8%);
+  --primaryColor500: hsl(270, 29%, 12%);
+  --whiteText:       #CCBDDB;
+}
 html{
   box-sizing: inherit;
 }
@@ -13,4 +18,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body,
+#root{
+  height: 100%;
+  width: 100%;
 }
