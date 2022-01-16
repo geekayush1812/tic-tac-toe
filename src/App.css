@@ -2,12 +2,8 @@
     height: 100%;
     width: 100%;
     background-color: var(--primaryColor900);
-    display: grid;
-    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    grid-template-rows: 60px auto;
 }
 nav{
-    grid-area:nav;
     background-color: var(--primaryColor900);
 }
 nav > h1{
@@ -16,10 +12,8 @@ nav > h1{
     text-align: center;
 }
 .leaderboard{
-    grid-area: leaderboard;
     background-color: var(--primaryColor500);
 }
 .playground {
-    grid-area: playground;
     background-color: var(--primaryColor900);
 }
