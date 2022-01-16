@@ -2,7 +2,10 @@ import './App.css';
 
 import { useEffect } from 'react';
 
-import { UPDATE_BREAK_POINT } from 'store/actionTypes/breakPointsActionTypes';
+import { Header } from 'common/header/Header';
+import {
+  UPDATE_UI_BREAK_POINT,
+} from 'store/actionTypes/breakPointsActionTypes';
 import {
   useDispatch,
   useSelector,
@@ -19,7 +22,7 @@ function App() {
   useEffect(()=>{
     const setBreakPoint=(breakPoint:keyof UiBreakPoints)=>{
       dispatch({
-        type:UPDATE_BREAK_POINT,
+        type:UPDATE_UI_BREAK_POINT,
         payload:breakPoint
       })
     }
@@ -27,13 +30,7 @@ function App() {
   },[dispatch])
   return (
     <div className='appContainer'>
-      <nav>
-        <h1>Tic Tac Toe</h1>
-        <ul>
-          <li>Leaderboard</li>
-          <li>Playground</li>
-        </ul>
-      </nav>
+      <Header />
       <section className='leaderboard'>
         {breakPoint==='mobile'?<h2>Mobile</h2>:null}
         {breakPoint==='tablet'?<h2>Tablet</h2>:null}

@@ -5,8 +5,9 @@
 }
 :root{
   --primaryColor900: hsl(274, 28%, 8%);
-  --primaryColor500: hsl(270, 29%, 12%);
-  --whiteText:       #CCBDDB;
+  --primaryColor500: hsl(274, 29%, 13%);
+  --whiteText900:    hsl(274, 29%, 80%);
+  --whiteText500:    hsl(274, 27%, 35%);
 }
 html{
   box-sizing: inherit;

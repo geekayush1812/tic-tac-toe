@@ -1,0 +1,48 @@
+nav {
+    background-color: var(--primaryColor900);
+}
+.headerWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.headerWrapper > h1 {
+    color: var(--whiteText900);
+    padding: 1rem;
+}
+.headerWrapper > h1,
+.headerWrapper > .settingIcon {
+    opacity: 0.8;
+}
+.headerWrapper > .settingIcon {
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    right: 8px;
+}
+
+.settingIcon > path,
+.settingIcon > circle {
+    stroke: var(--whiteText900);
+}
+nav > ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav > ul > li {
+    flex-basis: 50%;
+    text-align: center;
+    padding: 0.8rem 1rem;
+    color: var(--whiteText500);
+}
+li.listActive {
+    color: var(--whiteText900);  
+}
+li.playgroundListItem {
+    background-color: var(--primaryColor900);
+}
+li.leaderboardListItem {
+    background-color: var(--primaryColor500);
+}
