@@ -14,7 +14,7 @@ const breakPointReducer=(
     action:actionType
 ):breakPoints=>{
     switch(action.type){
-        case breakPointsActionTypes.UPDATE_BREAK_POINT:
+        case breakPointsActionTypes.UPDATE_UI_BREAK_POINT:
             return {
                 ...state,
                 breakPoint:action.payload
