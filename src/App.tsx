@@ -2,7 +2,7 @@ import './App.css';
 
 import { useEffect } from 'react';
 
-import { Header } from 'common/header/Header';
+import { Header } from 'common/Header/Header';
 import {
   UPDATE_UI_BREAK_POINT,
 } from 'store/actionTypes/breakPointsActionTypes';
@@ -15,6 +15,7 @@ import {
   UiBreakPoints,
 } from 'utils/constants/uiBreakPoints';
 import { uiBreakPointObserver } from 'utils/helpers/uiBreakPointObserver';
+import { GameMenuWrapper } from 'views/GameMenu/GameMenu';
 
 function App() {
   const breakPoint=useSelector((state)=>state.breakPointReducer.breakPoint);
@@ -31,6 +32,7 @@ function App() {
   return (
     <div className='appContainer'>
       <Header />
+      <GameMenuWrapper />
       <section className='leaderboard'>
         {breakPoint==='mobile'?<h2>Mobile</h2>:null}
         {breakPoint==='tablet'?<h2>Tablet</h2>:null}

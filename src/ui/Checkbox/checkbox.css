@@ -1,0 +1,30 @@
+.checkBoxLabel > input[type='checkbox'] {
+    display: none;
+}
+.customCheckBox {
+    height: 15px;
+    width: 15px;
+    border: 1px solid var(--primaryColor900);
+    border-radius: calc(var(--roundness-s) / 2);
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.checkBoxLabel > input[type='checkbox']:checked + .customCheckBox{
+    border: 1px solid var(--primaryColor500);
+    background-color: var(--primaryColor500);
+}
+.checkBoxLabel > input[type='checkbox']:checked + .customCheckBox::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 5px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}

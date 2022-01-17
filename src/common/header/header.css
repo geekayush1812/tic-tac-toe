@@ -7,7 +7,7 @@ nav {
     justify-content: center;
 }
 .headerWrapper > h1 {
-    color: var(--whiteText900);
+    color: var(--white800);
     padding: 1rem;
 }
 .headerWrapper > h1,
@@ -23,7 +23,7 @@ nav {
 
 .settingIcon > path,
 .settingIcon > circle {
-    stroke: var(--whiteText900);
+    stroke: var(--white800);
 }
 nav > ul {
     list-style-type: none;
@@ -35,10 +35,10 @@ nav > ul > li {
     flex-basis: 50%;
     text-align: center;
     padding: 0.8rem 1rem;
-    color: var(--whiteText500);
+    color: var(--white500);
 }
 li.listActive {
-    color: var(--whiteText900);  
+    color: var(--white800);  
 }
 li.playgroundListItem {
     background-color: var(--primaryColor900);

@@ -1,0 +1,7 @@
+li.switchButtonItem {
+    display: block;
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+    color: var(--white500);
+    transition: color 300ms;
+}
