@@ -5,9 +5,9 @@ import {
 } from 'assets/svg/exchangeArrow.svg';
 import { SwitchNoughtAndCrossProps } from 'types/uiTypes';
 
-export const SwitchNoughtAndCross = ({className}:SwitchNoughtAndCrossProps) => {
+export const SwitchNoughtAndCross = ({className,onClick}:SwitchNoughtAndCrossProps) => {
     return (
-        <div className={`exchangeArrowContainer ${className ? className : ''}`}>
+        <div onClick={onClick} className={`exchangeArrowContainer ${className ? className : ''}`}>
             <ExchangeArrowIcon className='exchangeArrowIcon' />
         </div>
     )

@@ -1,21 +1,34 @@
 import './gameSettings.css';
 
-import { useState } from 'react';
-
+import {
+  updateGameSound,
+  updateGameView,
+} from 'store/actions/gameMenuAction';
+import {
+  useDispatch,
+  useSelector,
+} from 'store/hooks';
+import { gameView } from 'types/reducerTypes/gameMenuReducerTypes';
 import { Checkbox } from 'ui/Checkbox/Checkbox';
 import { SwitchButton } from 'ui/SwitchButton/SwitchButton';
 
 export const GameSettings = () => {
-    const [selectedViewIndex,setSelectedViewIndex]=useState(0);
-    const [hasSound,setHasSound]=useState(true);
+    const {gameView,hasSound}=useSelector(state=>state.gameMenuReducer);
+    const dispatch = useDispatch();
+    const onGameViewChange=(item:gameView)=>{
+        dispatch(updateGameView(item))
+    }
+    const onGameSoundChange=()=>{
+        dispatch(updateGameSound());
+    }
     return (
         <>
             <div className="menuItem">
                 <h3>Game View</h3>
                 <div className="gameViewContainer">
                     <SwitchButton 
-                        selectedIndex={selectedViewIndex} 
-                        onClickItem={setSelectedViewIndex} 
+                        selectedItem={gameView}
+                        onClickItem={onGameViewChange} 
                         dataItems={['Standard','Inverted']} />
                 </div>
             </div>
@@ -24,9 +37,7 @@ export const GameSettings = () => {
                 <Checkbox 
                     className='checkBox'
                     checked={hasSound} 
-                    onChange={()=>{
-                        setHasSound(prevState=>!prevState);
-                    }} />
+                    onChange={onGameSoundChange} />
             </div>
         </>
     )

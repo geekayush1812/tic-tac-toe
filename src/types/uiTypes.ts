@@ -1,13 +1,17 @@
+import React from 'react';
+
+import { gameView } from './reducerTypes/gameMenuReducerTypes';
+
 export type SwitchButtonProps = {
-    selectedIndex: number;
-    onClickItem: (index:number)=>void;
-    dataItems:[string,string];
+    selectedItem: gameView;
+    onClickItem: (item:gameView)=>void;
+    dataItems:['Standard','Inverted'];
 }
 export type SwitchButtonItemProps = {
     children: React.ReactNode;
-    dataIndex: number;
-    onClick: (index:number)=>void;
-    selectedIndex: number;
+    item: gameView;
+    onClick: (item:gameView)=>void;
+    selectedItem: gameView;
 }
 export type CheckboxProps = {
     checked: boolean;
@@ -19,5 +23,18 @@ export type NoughtOrCrossProps = {
     className?:string;
 }
 export type SwitchNoughtAndCrossProps ={
+    onClick:(event:React.MouseEvent<HTMLDivElement,MouseEvent>)=>void;
+    className?:string;
+}
+export type TextInputProps ={
+    label:string;
+    value:string;
+    onChange:(event:React.ChangeEvent<HTMLInputElement>)=>void;
+    className?:string;
+}
+export type ButtonProps = {
+    text:string;
+    disabled:boolean;
+    onClick:(event:React.MouseEvent<HTMLButtonElement,MouseEvent>)=>void;
     className?:string;
 }

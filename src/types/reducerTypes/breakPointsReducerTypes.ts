@@ -4,7 +4,7 @@ type payloadType= keyof UiBreakPoints;
 export type breakPoints={
     breakPoint:keyof UiBreakPoints
 }
-export type actionType={
+export type breakPointsActionType={
     type:string;
     payload:payloadType
 }
