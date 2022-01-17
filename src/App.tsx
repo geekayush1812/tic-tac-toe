@@ -2,10 +2,8 @@ import './App.css';
 
 import { useEffect } from 'react';
 
-import { Header } from 'common/header/Header';
-import {
-  UPDATE_UI_BREAK_POINT,
-} from 'store/actionTypes/breakPointsActionTypes';
+import { Header } from 'common/Header/Header';
+import { updateBreakPoint } from 'store/actions/breakPointsAction';
 import {
   useDispatch,
   useSelector,
@@ -15,22 +13,24 @@ import {
   UiBreakPoints,
 } from 'utils/constants/uiBreakPoints';
 import { uiBreakPointObserver } from 'utils/helpers/uiBreakPointObserver';
+import { GameMenuWrapper } from 'views/GameMenu/GameMenu';
 
 function App() {
   const breakPoint=useSelector((state)=>state.breakPointReducer.breakPoint);
+  const playing = useSelector(state=>state.gameMenuReducer.playing);
   const dispatch=useDispatch();
   useEffect(()=>{
     const setBreakPoint=(breakPoint:keyof UiBreakPoints)=>{
-      dispatch({
-        type:UPDATE_UI_BREAK_POINT,
-        payload:breakPoint
-      })
+      dispatch(updateBreakPoint(breakPoint))
     }
     uiBreakPointObserver(uiBreakPoints,setBreakPoint);
   },[dispatch])
   return (
     <div className='appContainer'>
       <Header />
+      { 
+        playing ? null : <GameMenuWrapper />
+      }
       <section className='leaderboard'>
         {breakPoint==='mobile'?<h2>Mobile</h2>:null}
         {breakPoint==='tablet'?<h2>Tablet</h2>:null}

@@ -1,0 +1,16 @@
+.menuItem {
+    margin-top: 1rem
+}
+.menuItem h3 {
+    color: var(--white500);
+}
+.gameViewContainer {
+    margin-top: 0.4rem;
+}
+.soundMenuItem {
+    display: flex;
+    align-items: center;
+}
+.soundMenuItem .checkBox{
+    margin-left: 1rem;
+}
