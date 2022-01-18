@@ -1,0 +1,1 @@
+export type UseClientHeight = (ref:React.RefObject<HTMLElement>,initialValue:string) => string;

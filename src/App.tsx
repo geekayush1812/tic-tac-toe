@@ -14,6 +14,7 @@ import {
 } from 'utils/constants/uiBreakPoints';
 import { uiBreakPointObserver } from 'utils/helpers/uiBreakPointObserver';
 import { GameMenuWrapper } from 'views/GameMenu/GameMenu';
+import { Leaderboard } from 'views/Leaderboard/Leaderboard';
 import { Playground } from 'views/Playground/Playground';
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
         playing ? null : <GameMenuWrapper />
       }
       <Playground />
-      <section className='leaderboard'></section>
+      <Leaderboard />
     </div>
   );
 }
