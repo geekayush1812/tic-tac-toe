@@ -18,8 +18,8 @@ export const Header = () => {
             {
                 breakPoint === 'mobile' ?
                     <ul>
-                        <li className='playgroundListItem listActive'>Playground</li>
-                        <li className='leaderboardListItem'>Leaderboard</li>
+                        <li className='listActive'>Playground</li>
+                        <li>Leaderboard</li>
                     </ul>
                 : null
             }
