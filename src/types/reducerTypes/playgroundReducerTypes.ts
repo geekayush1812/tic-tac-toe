@@ -1,7 +1,6 @@
-import { player } from './gameMenuReducerTypes';
-
+export type currentPlayer = "playerOne" | "playerTwo" | undefined ;
 export type playground = {
-    currentPlayer : player | undefined ;
+    currentPlayer : currentPlayer;
 } & Record<'gameBoardArray'|'crossSequence'|'noughtSequence',number[]>;
 
 export type playgroundActionType = {

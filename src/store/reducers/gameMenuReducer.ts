@@ -16,7 +16,7 @@ const initialGameMenuState:gameMenu={
         noughtOrCross:'cross'
     },
     readyToPlay:false,
-    playing:true,
+    playing:false,
 };
 
 const gameMenuReducer=(

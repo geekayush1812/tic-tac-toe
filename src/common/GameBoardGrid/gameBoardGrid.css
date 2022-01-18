@@ -1,6 +1,8 @@
 .gameBoardGrid {
     width: 80%;
-    aspect-ratio: 1/1;
+    max-width: 600px;
+    height: 50%;
+    max-height: 600px;
     background-color: transparent;
     margin: 0 auto;
     display: grid;

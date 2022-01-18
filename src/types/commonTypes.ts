@@ -4,5 +4,6 @@ export type BackdropProps = {
 }
 export type blockType = "empty" | "nought" | "cross";
 export type GameBoardGridBlockProps = {
-    blockType : blockType
+    blockType : blockType;
+    gridIndex:number;
 }

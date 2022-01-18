@@ -1,8 +1,8 @@
 .playerContainer {
     display: flex;
     width: 70%;
-    margin: 0 auto;
-    margin-bottom: 2rem;
+    max-width: 600px;
+    margin: 2rem auto;
     position: relative;
 }
 .playerContainer .player {
@@ -24,6 +24,7 @@
 .player span.crossOrNoughtChoice,
 .player span.playerName {
     color: var(--white500);
+    transition: color 300ms;
 }
 
 .activePlayer span.crossOrNoughtChoice {
