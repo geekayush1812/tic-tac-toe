@@ -22,7 +22,7 @@ import { Playground } from 'views/Playground/Playground';
 
 function App() {
   const playing = useSelector(state=>state.gameMenuReducer.playing);
-  const breakPoint = useSelector(state=>state.breakPointReducer.breakPoint);
+  const selectedTab = useSelector(state=>state.appReducer.selectedTab);
   const dispatch=useDispatch();
   useEffect(()=>{
     const setBreakPoint=(breakPoint:keyof UiBreakPoints)=>{
@@ -37,8 +37,12 @@ function App() {
         playing ? null : <GameMenuWrapper />
       }
       <HeightBoundContainer className={'heightBoundContainer playgroundLeaderboardGrid'}>
-        <Playground className={`playgroundGrid`}/>
-        <Leaderboard className={`leaderboardGrid`} />
+        {
+          selectedTab === 'playground' ? <Playground className={`playgroundGrid`}/> : null
+        }
+        {
+          selectedTab === 'leaderboard' ? <Leaderboard className={`leaderboardGrid`} /> : null
+        }
       </HeightBoundContainer>
     </div>
   );
