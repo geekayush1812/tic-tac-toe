@@ -1,16 +1,19 @@
 import './leaderboard.css';
 
-import { useRef } from 'react';
+import { UserCard } from 'common/UserCard/UserCard';
+import { leaderboardProps } from 'types/viewsTypes';
 
-import { useClientHeight } from 'hooks/useClientHeight';
-
-export const Leaderboard = () => {
-    const leaderboardElementRef=useRef<HTMLElement>(null);
-    const leaderboardElementHeight=useClientHeight(leaderboardElementRef,'0%');
-
+export const Leaderboard = ({className}:leaderboardProps) => {
     return (
-        <section ref={leaderboardElementRef}  style={{height:leaderboardElementHeight}} className='leaderboard'>
-
+        <section className={`leaderboard ${className ? className : ''}`}>
+            <h2>Leaderboard</h2>
+            <div className="userCardListContainer">
+               <UserCard />
+               <UserCard />
+               <UserCard />
+               <UserCard />
+               <UserCard />
+            </div>
         </section>
     )
 }

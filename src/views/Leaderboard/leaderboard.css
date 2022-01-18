@@ -1,0 +1,15 @@
+.leaderboard {
+    padding: 1rem 0.5rem;
+}
+.leaderboard > h2 {
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--white800);
+}
+.userCardListContainer {
+    max-width: 80%;
+    margin: 2rem auto 0 auto;
+    padding: 0.2rem 0;
+    border-radius: var(--roundness-s);
+    background-color: var(--primaryColor500);
+}

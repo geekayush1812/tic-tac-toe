@@ -3,6 +3,9 @@ import './App.css';
 import { useEffect } from 'react';
 
 import { Header } from 'common/Header/Header';
+import {
+  HeightBoundContainer,
+} from 'common/HeightBoundContainer/HeightBoundContainer';
 import { updateBreakPoint } from 'store/actions/breakPointsAction';
 import {
   useDispatch,
@@ -19,6 +22,7 @@ import { Playground } from 'views/Playground/Playground';
 
 function App() {
   const playing = useSelector(state=>state.gameMenuReducer.playing);
+  const breakPoint = useSelector(state=>state.breakPointReducer.breakPoint);
   const dispatch=useDispatch();
   useEffect(()=>{
     const setBreakPoint=(breakPoint:keyof UiBreakPoints)=>{
@@ -32,8 +36,10 @@ function App() {
       { 
         playing ? null : <GameMenuWrapper />
       }
-      <Playground />
-      <Leaderboard />
+      <HeightBoundContainer className={'heightBoundContainer playgroundLeaderboardGrid'}>
+        <Playground className={`playgroundGrid`}/>
+        <Leaderboard className={`leaderboardGrid`} />
+      </HeightBoundContainer>
     </div>
   );
 }
