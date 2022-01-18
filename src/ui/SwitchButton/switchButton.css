@@ -1,0 +1,19 @@
+ul.switchButtonContainer {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+ul.switchButtonContainer > li:first-child {
+    border-radius: var(--roundness-s) 0 0 var(--roundness-s);
+}
+ul.switchButtonContainer > li:last-child {
+    border-radius: 0 var(--roundness-s) var(--roundness-s) 0;
+}
+ul.switchButtonContainer > li.active {
+    color: var(--white900);
+    background-color: var(--primaryColor900);
+}
+ul.switchButtonContainer > li.inactive {
+    background-color: var(--primaryColor500);
+}

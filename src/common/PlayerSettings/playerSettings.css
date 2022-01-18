@@ -1,0 +1,23 @@
+.playerSettingsContainer {
+    display: grid;
+    grid-template-columns:40px 1fr 1fr;
+    gap:0.5rem 0.4rem;
+    grid-template-areas:"noughtAndCrossTop playerInputTop playerInputTop"
+                        "noughtAndCrossSwitch . ."
+                        "noughtAndCrossBottom playerInputBottom playerInputBottom";
+}
+.noughtOrCrossTop {
+    grid-area: noughtAndCrossTop;
+}
+.noughtOrCrossBottom {
+    grid-area: noughtAndCrossBottom;
+}
+.playerNameInputTop {
+    grid-area: playerInputTop;
+}
+.playerNameInputBottom {
+    grid-area: playerInputBottom;
+}
+.noughtAndCrossSwitch {
+    grid-area: noughtAndCrossSwitch;
+}

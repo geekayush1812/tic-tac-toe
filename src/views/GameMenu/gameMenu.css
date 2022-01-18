@@ -1,0 +1,25 @@
+.flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gameMenuWrapperCard {
+    width: 80%;
+    max-width: 400px;
+    padding: 0.8rem 1.2rem;
+    background-color: var(--white900);
+    border-radius: var(--roundness-s);
+    box-shadow: 0 0 12px var(--white900);
+}
+.gameMenuWrapperCard h2 {
+    color: var(--primaryColor500);
+    text-align: center;
+    font-size: 1.4rem;
+}
+.horizontalRule {
+    margin: 1rem 0;
+    border-top: 1px solid var(--white800);
+}
+.playButton {
+    margin: 1rem auto 0 auto;
+}
