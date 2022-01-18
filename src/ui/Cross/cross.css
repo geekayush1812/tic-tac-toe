@@ -1,0 +1,14 @@
+.crossSvgContainer {
+    max-width: 120px;
+    max-height: 120px;
+}
+.lineDiagonal1,.lineDiagonal2 {
+    stroke-dasharray: 140;
+    stroke-dashoffset: 140;
+    animation: offset 1000ms forwards;
+}
+@keyframes offset {
+    to {
+        stroke-dashoffset: 0;
+    }
+}

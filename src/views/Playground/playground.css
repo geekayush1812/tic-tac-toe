@@ -1,0 +1,13 @@
+.playground {
+    width: 100%;
+    background-color: var(--primaryColor800);
+}
+
+.playgroundGridContainer {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background-color: var(--white800); */
+}

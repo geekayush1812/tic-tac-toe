@@ -14,9 +14,9 @@ import {
 } from 'utils/constants/uiBreakPoints';
 import { uiBreakPointObserver } from 'utils/helpers/uiBreakPointObserver';
 import { GameMenuWrapper } from 'views/GameMenu/GameMenu';
+import { Playground } from 'views/Playground/Playground';
 
 function App() {
-  const breakPoint=useSelector((state)=>state.breakPointReducer.breakPoint);
   const playing = useSelector(state=>state.gameMenuReducer.playing);
   const dispatch=useDispatch();
   useEffect(()=>{
@@ -31,12 +31,8 @@ function App() {
       { 
         playing ? null : <GameMenuWrapper />
       }
-      <section className='leaderboard'>
-        {breakPoint==='mobile'?<h2>Mobile</h2>:null}
-        {breakPoint==='tablet'?<h2>Tablet</h2>:null}
-        {breakPoint==='desktop'?<h2>Desktop</h2>:null}
-      </section>
-      <section className="playground"></section>
+      <Playground />
+      <section className='leaderboard'></section>
     </div>
   );
 }

@@ -1,0 +1,48 @@
+.playerContainer {
+    display: flex;
+    width: 70%;
+    max-width: 600px;
+    margin: 2rem auto;
+    position: relative;
+}
+.playerContainer .player {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap:0.1rem 0;
+    margin-bottom: 0.8rem;
+}
+.player span.crossOrNoughtChoice {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.player span.playerName {
+    font-size: 0.9rem;
+}
+.player span.crossOrNoughtChoice,
+.player span.playerName {
+    color: var(--white500);
+    transition: color 300ms;
+}
+
+.activePlayer span.crossOrNoughtChoice {
+    color: var(--white);
+}
+.activePlayer span.playerName {
+    color: var(--white800);
+}
+.activePlayerIndicator {
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    width: 50%;
+    border-radius: var(--roundness-s);   
+    background-color: var(--white500);
+    transform: translateX(0%);
+    transition: transform 300ms;
+}
+.activePlayerIndicator.moveExtreme {
+    transform: translateX(100%);
+}
