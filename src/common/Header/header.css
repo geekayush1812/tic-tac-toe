@@ -1,0 +1,43 @@
+nav {
+    background-color: var(--primaryColor900);
+}
+.headerWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.headerWrapper > h1 {
+    color: var(--white800);
+    padding: 1rem;
+}
+.headerWrapper > h1,
+.headerWrapper > .settingIcon {
+    opacity: 0.8;
+}
+.headerWrapper > .settingIcon {
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    right: 8px;
+}
+
+.settingIcon > path,
+.settingIcon > circle {
+    stroke: var(--white800);
+}
+nav > ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav > ul > li {
+    flex-basis: 50%;
+    text-align: center;
+    padding: 0.8rem 1rem;
+    color: var(--white500);
+    background-color: var(--primaryColor900);
+}
+li.listActive {
+    color: var(--white);  
+}
