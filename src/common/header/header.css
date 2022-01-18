@@ -36,13 +36,8 @@ nav > ul > li {
     text-align: center;
     padding: 0.8rem 1rem;
     color: var(--white500);
-}
-li.listActive {
-    color: var(--white800);  
-}
-li.playgroundListItem {
     background-color: var(--primaryColor900);
 }
-li.leaderboardListItem {
-    background-color: var(--primaryColor500);
+li.listActive {
+    color: var(--white);  
 }

@@ -1,0 +1,10 @@
+.nought {
+    stroke-dasharray: 190;
+    stroke-dashoffset: 190;
+    animation: offsetCircle 3s forwards;
+}
+@keyframes offsetCircle {
+    to {
+        stroke-dashoffset:0;
+    }
+}

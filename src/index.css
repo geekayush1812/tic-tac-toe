@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 :root{
+  --primaryDark: hsl(274, 28%, 4%);
   --primaryColor900: hsl(274, 28%, 8%);
   --primaryColor500: hsl(274, 29%, 13%);
   --white:      hsl(274, 29%, 91%);

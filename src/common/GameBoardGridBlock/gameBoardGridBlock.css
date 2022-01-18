@@ -1,0 +1,18 @@
+.gridBlock {
+    border: 1px solid var(--white500);
+}
+.gridBlock:nth-child(3n + 1) {
+    border-left: none;
+}
+.gridBlock:nth-child(3n + 3) {
+    border-right: none;
+}
+.gridBlock:nth-child(-n + 3) {
+    border-top: none;
+}
+.gridBlock:nth-last-child(-n + 3){
+    border-bottom: none;
+}
+.emptyGridBlock:hover {
+    background-color: blue;
+}
