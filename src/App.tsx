@@ -11,6 +11,7 @@ import {
   useDispatch,
   useSelector,
 } from 'store/hooks';
+import { selectedTab } from 'types/reducerTypes/appReducerTypes';
 import {
   uiBreakPoints,
   UiBreakPoints,
@@ -23,13 +24,33 @@ import { Playground } from 'views/Playground/Playground';
 function App() {
   const playing = useSelector(state=>state.gameMenuReducer.playing);
   const selectedTab = useSelector(state=>state.appReducer.selectedTab);
+  const breakPoint = useSelector(state=>state.breakPointReducer.breakPoint);
   const dispatch=useDispatch();
   useEffect(()=>{
     const setBreakPoint=(breakPoint:keyof UiBreakPoints)=>{
       dispatch(updateBreakPoint(breakPoint))
     }
     uiBreakPointObserver(uiBreakPoints,setBreakPoint);
-  },[dispatch])
+  },[dispatch]);
+  const checkTabForMobileAndDesktopView = (tab:selectedTab) => {
+    const isDeskTopView = breakPoint === 'desktop';
+    const isMobileView = breakPoint === 'mobile';
+    const isThisTabSelected = selectedTab === tab;
+    
+    return isDeskTopView || (isMobileView && isThisTabSelected);
+  }
+  const renderPlayground = () => {
+    if(checkTabForMobileAndDesktopView("playground")){
+      return <Playground className={`playgroundGrid`}/>;
+    }
+    return null;
+  }
+  const renderLeaderboard = () => {
+    if(checkTabForMobileAndDesktopView("leaderboard")){
+      return <Leaderboard className={`leaderboardGrid`} /> ;
+    }
+    return null;
+  }
   return (
     <div className='appContainer'>
       <Header />
@@ -37,12 +58,8 @@ function App() {
         playing ? null : <GameMenuWrapper />
       }
       <HeightBoundContainer className={'heightBoundContainer playgroundLeaderboardGrid'}>
-        {
-          selectedTab === 'playground' ? <Playground className={`playgroundGrid`}/> : null
-        }
-        {
-          selectedTab === 'leaderboard' ? <Leaderboard className={`leaderboardGrid`} /> : null
-        }
+        {renderPlayground()}
+        {renderLeaderboard()}
       </HeightBoundContainer>
     </div>
   );
