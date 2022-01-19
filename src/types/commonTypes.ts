@@ -1,3 +1,5 @@
+import { currentPlayer } from './reducerTypes/playgroundReducerTypes';
+
 export type BackdropProps = {
     children: React.ReactNode;
     className?: string;
@@ -11,3 +13,4 @@ export type HeightBoundContainerProps = {
     children?: React.ReactNode;
     className?: string;
 }
+export type getCurrentPlayerGridNotation = (currentPlayer:Exclude<currentPlayer,undefined>) => number;
