@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
-import { useClientHeight } from 'hooks/useClientHeight';
 import { HeightBoundContainerProps } from 'types/commonTypes';
+import { useClientHeight } from 'utils/hooks/useClientHeight';
 
 export const HeightBoundContainer = ({children,className}:HeightBoundContainerProps) => {
     const heightBoundContainerRef=useRef<HTMLDivElement>(null);

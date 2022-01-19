@@ -1,11 +1,11 @@
 import './leaderboard.css';
 
 import { UserCard } from 'common/UserCard/UserCard';
-import { useLocalStorage } from 'hooks/useLocalStorage';
 import {
   leaderboardProps,
   leaderboardUserDetails,
 } from 'types/viewsTypes';
+import { useLocalStorage } from 'utils/hooks/useLocalStorage';
 
 export const Leaderboard = ({className}:leaderboardProps) => {
     const [storedLeaderboardItems,setStoredLeaderboardItems]=useLocalStorage<leaderboardUserDetails>("leaderboard");

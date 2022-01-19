@@ -1,5 +1,6 @@
 import {
   PARTIAL_APP_RESET_TO_PLAY_AGAIN,
+  RESET_APP,
   SET_SELECTED_TAB,
   UPDATE_GAME_RESULT,
   UPDATE_PLAYING,
@@ -34,4 +35,7 @@ export const updatePlaying = (playing:boolean)=>({
 })
 export const partialAppResetToPlayAgain = ()=> ({
     type:PARTIAL_APP_RESET_TO_PLAY_AGAIN
+})
+export const resetApp = ()=>({
+    type:RESET_APP
 })

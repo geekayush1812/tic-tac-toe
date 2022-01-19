@@ -54,6 +54,8 @@ export const appReducer = (
                 showGameResult: false,
                 winnerNoughtAndCross: undefined
             }
+        case appActionTypes.RESET_APP:
+            return initialAppState;
         default:
             return state;
     }

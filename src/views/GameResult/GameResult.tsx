@@ -12,7 +12,11 @@ import { ReactComponent as DrawIcon } from 'assets/svg/scale.svg';
 import { ReactComponent as WinnerIcon } from 'assets/svg/winner.svg';
 import { Backdrop } from 'common/Backdrop/Backdrop';
 import { batch } from 'react-redux';
-import { partialAppResetToPlayAgain } from 'store/actions/appAction';
+import {
+  partialAppResetToPlayAgain,
+  resetApp,
+} from 'store/actions/appAction';
+import { resetGameMenu } from 'store/actions/gameMenuAction';
 import { resetPlayground } from 'store/actions/playgroundAction';
 import {
   useDispatch,
@@ -45,10 +49,14 @@ const GameResultCore = () => {
             dispatch(resetPlayground());
             dispatch(partialAppResetToPlayAgain());
         });
-    },[dispatch])
-    const handlePlayAgain = useCallback(()=>{
-        batchResetAppToPlayAgain();
-    },[batchResetAppToPlayAgain])
+    },[dispatch]);
+    const batchResetAppToLaunchNewGame = useCallback(()=>{
+        batch(()=>{
+            dispatch(resetPlayground());
+            dispatch(resetGameMenu());
+            dispatch(resetApp());
+        })
+    },[dispatch]);
     return (
         <Backdrop className='flexCenter'>
             <div className={`gameResultWrapperCard ${mounted?'fadeIn':''}`}>
@@ -62,8 +70,8 @@ const GameResultCore = () => {
                     }
                 </div>
                 <div className="actionButtonContainer">
-                    <Button text='Launch new game' className='secondaryButton' disabled={false} onClick={()=>{}} />
-                    <Button text='Play again' disabled={false} onClick={handlePlayAgain} />
+                    <Button text='Launch new game' className='secondaryButton' disabled={false} onClick={batchResetAppToLaunchNewGame} />
+                    <Button text='Play again' disabled={false} onClick={batchResetAppToPlayAgain} />
                 </div>
             </div>
         </Backdrop>

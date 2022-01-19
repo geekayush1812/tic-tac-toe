@@ -60,6 +60,8 @@ const gameMenuReducer=(
                     noughtOrCross:state.playerOne.noughtOrCross,
                 }
             };
+        case gameMenuActionTypes.RESET_GAME_MENU:
+            return initialGameMenuState;
         default:
             return state;
     }

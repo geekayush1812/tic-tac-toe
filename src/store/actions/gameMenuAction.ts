@@ -1,4 +1,5 @@
 import {
+  RESET_GAME_MENU,
   SWITCH_PLAYER_NOUGHT_CROSS_CHOICE,
   UPDATE_GAME_SOUND,
   UPDATE_GAME_VIEW,
@@ -24,4 +25,7 @@ export const updatePlayerTwoName = (name:string)=>({
 })
 export const switchPlayerNoughtAndCrossChoice = ()=>({
     type:SWITCH_PLAYER_NOUGHT_CROSS_CHOICE
+})
+export const resetGameMenu = () => ({
+    type:RESET_GAME_MENU
 })
