@@ -1,9 +1,14 @@
 .playground {
     width: 100%;
     height: 100%;
+    padding: 1rem 0.5rem;
     background-color: var(--primaryColor800);
 }
-
+.playground > h2 {
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--white800);
+}
 .playgroundGridContainer {
     height: 100%;
     width: 100%;
