@@ -21,6 +21,7 @@ import { playgroundGridNotation } from 'utils/constants/playgroundGridNotation';
 export const GameBoardGridBlock = ({blockType,gridIndex}:GameBoardGridBlockProps) => {
     const currentPlayer = useSelector(state=>state.playgroundReducer.currentPlayer)
     const gameReducerState = useSelector(state=>state.gameMenuReducer);
+    const gameResult = useSelector(state=>state.appReducer.gameResult);
     const dispatch = useDispatch();
     const getCurrentPlayerGridNotation:getCurrentPlayerGridNotation = (currentPlayer) => {
         const currentPlayerNoughtOrCross = gameReducerState[currentPlayer].noughtOrCross;
@@ -31,7 +32,8 @@ export const GameBoardGridBlock = ({blockType,gridIndex}:GameBoardGridBlockProps
     }
     const handleClickGridBlock=()=>{
         const isBlockEmpty = blockType === 'empty';
-        if(currentPlayer && isBlockEmpty){
+        const gameNotHasWinner = gameResult === undefined;
+        if(currentPlayer && isBlockEmpty && gameNotHasWinner){
             dispatch(updateGameBoardArray(gridIndex,getCurrentPlayerGridNotation(currentPlayer)));
             const hasCurrentPlayerHaveNought = gameReducerState[currentPlayer].noughtOrCross === 'nought';
             if(hasCurrentPlayerHaveNought){
