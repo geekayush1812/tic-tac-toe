@@ -5,7 +5,12 @@ import {
 } from 'types/reducerTypes/appReducerTypes';
 
 const initialAppState:app= {
-    selectedTab : "playground"
+    selectedTab : "playground",
+    gameResult: undefined,
+    showGameResult: false,
+    winnerNoughtAndCross: undefined,
+    readyToPlay: false,
+    playing: false
 }
 
 export const appReducer = (
@@ -17,6 +22,30 @@ export const appReducer = (
             return {
                 ...state,
                 selectedTab:action.payload
+            }
+        case appActionTypes.UPDATE_GAME_RESULT:
+            if(action.payload){
+                return {
+                    ...state,
+                    gameResult:action.payload,
+                    showGameResult:true,
+                }
+            }
+            return state;
+        case appActionTypes.UPDATE_WINNER_NOUGHT_AND_CROSS:
+            return {
+                ...state,
+                winnerNoughtAndCross:action.payload
+            };
+        case appActionTypes.UPDATE_READY_TO_PLAY:
+            return {
+                ...state,
+                readyToPlay:action.payload
+            }
+        case appActionTypes.UPDATE_PLAYING:
+            return {
+                ...state,
+                playing:action.payload
             }
         default:
             return state;
