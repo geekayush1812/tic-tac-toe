@@ -13,15 +13,23 @@ import { checkWinner } from 'utils/helpers/checkWinner';
 export const GameBoardGrid = () => {
     const {gameBoardArray,crossSequence,noughtSequence}=useSelector(state=>state.playgroundReducer);
     useEffect(()=>{
-        let hasCrossWon = checkWinner(crossSequence);
         let hasNoughtWon = checkWinner(noughtSequence);
-        if(hasCrossWon){
-            alert("cross won");
-        }
         if(hasNoughtWon){
             alert("nought won");
         }
-    },[crossSequence,noughtSequence])
+    },[noughtSequence])
+    useEffect(()=>{
+        let hasCrossWon = checkWinner(crossSequence);
+        if(hasCrossWon){
+            alert("cross won");
+        }
+    },[crossSequence]);
+    useEffect(()=>{
+        const hasGameBoardHaveEmptyGrid = gameBoardArray.includes(playgroundGridNotation.emptyGrid);
+        if(!hasGameBoardHaveEmptyGrid){
+            alert("draw")
+        }
+    },[gameBoardArray])
     const chooseGridType = (gridValue:number):blockType => {
         if(gridValue === playgroundGridNotation.noughtGrid) return 'nought';
         if(gridValue === playgroundGridNotation.crossGrid)  return 'cross';
