@@ -9,7 +9,7 @@ import { PlayerSettings } from 'common/PlayerSettings/PlayerSettings';
 import {
   updatePlaying,
   updateReadyToPlay,
-} from 'store/actions/gameMenuAction';
+} from 'store/actions/appAction';
 import {
   useDispatch,
   useSelector,
@@ -18,7 +18,7 @@ import { Button } from 'ui/Button/Button';
 import { isValidPlayerName } from 'utils/helpers/isValidPlayerName';
 
 const GameMenu = () => {
-    const readyToPlay=useSelector(state=>state.gameMenuReducer.readyToPlay);
+    const readyToPlay=useSelector(state=>state.appReducer.readyToPlay);
     const playerOneName=useSelector(state=>state.gameMenuReducer.playerOne.name);
     const playerTwoname=useSelector(state=>state.gameMenuReducer.playerTwo.name);
     const dispatch=useDispatch();

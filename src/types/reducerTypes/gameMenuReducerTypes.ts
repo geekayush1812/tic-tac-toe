@@ -6,8 +6,8 @@ export type player = {
 }; 
 export type gameMenu = {
     gameView:gameView;
-} & Record<'readyToPlay'| 'playing'|'hasSound',boolean> 
-& Record<'playerOne'|'playerTwo',player> ;
+    hasSound:boolean;
+} & Record<'playerOne'|'playerTwo',player> ;
 
 export type gameMenuActionType = {
     type: string;
