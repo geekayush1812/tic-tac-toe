@@ -47,6 +47,13 @@ export const appReducer = (
                 ...state,
                 playing:action.payload
             }
+        case appActionTypes.PARTIAL_APP_RESET_TO_PLAY_AGAIN:
+            return {
+                ...state,
+                gameResult: undefined,
+                showGameResult: false,
+                winnerNoughtAndCross: undefined
+            }
         default:
             return state;
     }

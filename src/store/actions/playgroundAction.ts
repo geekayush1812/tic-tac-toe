@@ -1,6 +1,7 @@
 import {
   PUSH_TO_CROSS_SEQUENCE,
   PUSH_TO_NOUGHT_SEQUENCE,
+  RESET_PLAYGROUND,
   UPDATE_CURRENT_PLAYER,
   UPDATE_GAME_BOARD_ARRAY,
 } from 'store/actionTypes/playgroundActionTypes';
@@ -24,4 +25,7 @@ export const pushToNoughtSequence=(index:number)=>({
 export const updateCurrentPlayer=(currentPlayer:currentPlayer)=>({
     type: UPDATE_CURRENT_PLAYER,
     payload: currentPlayer
+})
+export const resetPlayground = ()=>({
+    type:RESET_PLAYGROUND
 })
