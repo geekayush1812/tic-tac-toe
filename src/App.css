@@ -9,7 +9,7 @@
 .playgroundLeaderboardGrid {
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr minmax(400px,1fr);
     grid-template-areas: "playground leaderboard";
 }
 .playgroundGrid {

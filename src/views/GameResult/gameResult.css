@@ -12,7 +12,7 @@
     box-shadow: 0 0 12px var(--white900);
     opacity: 0;
     transform: translateY(-5px);
-    transition: opacity 800ms,transform 1s;
+    transition: opacity 800ms 500ms,transform 1s 500ms;
 }
 .fadeIn {
     opacity: 1;

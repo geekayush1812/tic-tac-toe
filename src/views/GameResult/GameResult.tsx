@@ -3,11 +3,12 @@ import './gameResult.css';
 import {
   useCallback,
   useEffect,
-  useLayoutEffect,
   useState,
 } from 'react';
 import ReactDOM from 'react-dom';
 
+import drawSound from 'assets/sounds/drawSound.wav';
+import winnerSound from 'assets/sounds/winSound.wav';
 import { ReactComponent as DrawIcon } from 'assets/svg/scale.svg';
 import { ReactComponent as WinnerIcon } from 'assets/svg/winner.svg';
 import { Backdrop } from 'common/Backdrop/Backdrop';
@@ -23,18 +24,16 @@ import {
   useSelector,
 } from 'store/hooks';
 import { Button } from 'ui/Button/Button';
+import { useMountAnimation } from 'utils/hooks/useMountAnimation';
 
 const GameResultCore = () => {
-    const [mounted,setMounted]=useState(false);
+    const mounted = useMountAnimation();
     const [resultMessage,setResultMessage]=useState("");
     const {gameResult,winnerNoughtAndCross} = useSelector(state=>state.appReducer);
-    const {playerOne,playerTwo} = useSelector(state=>state.gameMenuReducer);
+    const {playerOne,playerTwo,hasSound} = useSelector(state=>state.gameMenuReducer);
     const dispatch = useDispatch();
     const isGameDraw = gameResult === 'draw';
     const gameHasWinner = gameResult === 'winner';
-    useLayoutEffect(()=>{
-        setMounted(true);
-    },[])
     useEffect(()=>{
         setResultMessage("It's a Draw");
     },[isGameDraw]);
@@ -44,6 +43,20 @@ const GameResultCore = () => {
             setResultMessage(`${winnerPlayer?.name} Won!!`)
         }
     },[gameHasWinner, playerOne, playerTwo, winnerNoughtAndCross]);
+    useEffect(()=>{
+        if(resultMessage && hasSound){
+            let sound:HTMLAudioElement;
+            if(resultMessage === "It's a Draw"){
+                sound= new Audio(drawSound);
+            }else{
+                sound=new Audio(winnerSound);
+            }
+            sound.play();
+            return ()=>{
+                sound.pause();
+            }
+        }
+    },[hasSound, resultMessage])
     const batchResetAppToPlayAgain = useCallback(()=>{
         batch(()=>{
             dispatch(resetPlayground());
