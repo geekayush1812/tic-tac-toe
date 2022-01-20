@@ -1,9 +1,9 @@
-.flexCenter {
+.gm72flexCenter {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.gameMenuWrapperCard {
+.gm28gameMenuWrapperCard {
     width: 80%;
     max-width: 400px;
     padding: 0.8rem 1.2rem;
@@ -14,19 +14,19 @@
     transform: translateY(-5px);
     transition: opacity 800ms 500ms,transform 1s 500ms;
 }
-.fadeIn {
+.gm77fadeIn {
     opacity: 1;
     transform: translateY(0);
 }
-.gameMenuWrapperCard h2 {
+.gm28gameMenuWrapperCard h2 {
     color: var(--primaryColor500);
     text-align: center;
     font-size: 1.4rem;
 }
-.horizontalRule {
+.gm82horizontalRule {
     margin: 1rem 0;
     border-top: 1px solid var(--white800);
 }
-.playButton {
+.gm28playButton {
     margin: 1rem auto 0 auto;
 }

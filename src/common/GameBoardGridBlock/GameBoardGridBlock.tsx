@@ -14,11 +14,11 @@ import {
   GameBoardGridBlockProps,
   getCurrentPlayerGridNotation,
 } from 'types/commonTypes';
-import { Cross } from 'ui/Cross/Cross';
-import { Nought } from 'ui/Nought/Nought';
-import { playgroundGridNotation } from 'utils/constants/playgroundGridNotation';
+import { Cross } from 'ui/Cross';
+import { Nought } from 'ui/Nought';
+import { playgroundGridNotation } from 'utils/constants';
 
-export const GameBoardGridBlock = ({blockType,gridIndex}:GameBoardGridBlockProps) => {
+const GameBoardGridBlock = ({blockType,gridIndex}:GameBoardGridBlockProps) => {
     const currentPlayer = useSelector(state=>state.playgroundReducer.currentPlayer)
     const gameReducerState = useSelector(state=>state.gameMenuReducer);
     const gameResult = useSelector(state=>state.appReducer.gameResult);
@@ -46,9 +46,10 @@ export const GameBoardGridBlock = ({blockType,gridIndex}:GameBoardGridBlockProps
     }
     
     return (
-        <div onClick={handleClickGridBlock} className={`gridBlock ${blockType === 'empty' ? 'emptyGridBlock':''}`}>
+        <div onClick={handleClickGridBlock} className={`gbg87gridBlock ${blockType === 'empty' ? 'gbg98emptyGridBlock':''}`}>
             {blockType === 'cross' ? <Cross /> : null }
             {blockType === 'nought' ? <Nought /> : null}
         </div>
     )
 }
+export default GameBoardGridBlock;

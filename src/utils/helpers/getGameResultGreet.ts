@@ -1,6 +1,6 @@
 import { gameResult } from 'types/reducerTypes/appReducerTypes';
 
-export const getGameResultGreet = (gameResult:gameResult) => {
+const getGameResultGreet = (gameResult:gameResult) => {
     if(gameResult){
         switch(gameResult){
             case 'draw':
@@ -10,3 +10,4 @@ export const getGameResultGreet = (gameResult:gameResult) => {
         }
     }
 }
+export default getGameResultGreet;

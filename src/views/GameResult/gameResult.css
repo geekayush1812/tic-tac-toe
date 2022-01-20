@@ -1,9 +1,9 @@
-.flexCenter {
+.gr54flexCenter {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.gameResultWrapperCard {
+.gr82gameResultWrapperCard {
     width: 80%;
     max-width: 400px;
     padding: 0.8rem 1.2rem;
@@ -14,18 +14,18 @@
     transform: translateY(-5px);
     transition: opacity 800ms 500ms,transform 1s 500ms;
 }
-.fadeIn {
+.gr72fadeIn {
     opacity: 1;
     transform: translateY(0);
 }
-.gameResultWrapperCard .resultContainer {
+.gr82gameResultWrapperCard .gr77resultContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2rem 0;
     margin-bottom: 2rem;
 }
-.resultContainer > h2 {
+.gr77resultContainer > h2 {
     font-size: 2rem;
     color: var(--white500);
     text-shadow: 0 0 7px var(--white),
@@ -33,13 +33,13 @@
                 0 0 42px var(--white500),
                 0 0 82px var(--white500);
 }
-.resultContainer .resultIcon {
+.gr77resultContainer .gr28resultIcon {
     max-width: 60%;
     max-height: 300px;
     transform: translate(0,0) rotateZ(0deg);
     animation: resultIconTilting 1s 800ms ease-in;
 }
-.gameResultWrapperCard .actionButtonContainer {
+.gr82gameResultWrapperCard .gr18actionButtonContainer {
     width: 80%;
     margin: 0 auto;
     padding: 1rem 0;
@@ -47,14 +47,14 @@
     align-items: center;
     justify-content: space-between;
 }
-.secondaryButton {
+.gr87secondaryButton {
     background-color: transparent;
     transition: background-color 200ms ease-in;
 }
-.secondaryButton:hover {
+.gr87secondaryButton:hover {
     background-color: var(--white800);
 }
-.secondaryButton span{
+.gr87secondaryButton span{
     color: var(--primary800);
 }
 

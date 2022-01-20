@@ -4,8 +4,8 @@ import {
   leaderboard,
   leaderboardAction,
 } from 'types/reducerTypes/leaderboardReducerTypes';
-import { localStorageKeys } from 'utils/constants/localstorageKeys';
-import { setLocalStorageValue } from 'utils/helpers/setLocalStorageValue';
+import { localStorageKeys } from 'utils/constants';
+import { setLocalStorageValue } from 'utils/helpers';
 
 const initialLeaderboardState:leaderboard = {
     leaderboard:null

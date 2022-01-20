@@ -1,8 +1,8 @@
-.noughtSvgContainer {
+.no34noughtSvgContainer {
     max-width: 120px;
     max-height: 120px;
 }
-.nought {
+.no87nought {
     stroke-dasharray: 190;
     stroke-dashoffset: 190;
     animation: offsetCircle 500ms forwards;

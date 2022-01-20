@@ -5,8 +5,10 @@ import {
   useState,
 } from 'react';
 
-import { ReactComponent as SettingIcon } from 'assets/svg/settingIcon.svg';
-import { GameSettings } from 'common/GameSettings/GameSettings';
+import {
+  ReactComponent as SettingIcon,
+} from 'assets/images/svg/settingIcon.svg';
+import { GameSettings } from 'common/GameSettings';
 import { setSelectedTab } from 'store/actions/appAction';
 import {
   useDispatch,
@@ -14,7 +16,7 @@ import {
 } from 'store/hooks';
 import { selectedTab } from 'types/reducerTypes/appReducerTypes';
 
-export const Header = () => {
+const Header = () => {
     const breakPoint = useSelector(state=>state.breakPointReducer.breakPoint);
     const selectedTab = useSelector(state=>state.appReducer.selectedTab);
     const [showSetting,setShowSetting] = useState(breakPoint==='mobile'?false:true);
@@ -36,25 +38,26 @@ export const Header = () => {
     }
     return (
         <nav>
-            <div className="headerWrapper">
+            <div className="hdr87headerWrapper">
                 <h1>Tic Tac Toe</h1>
                 {
                     breakPoint === 'mobile' ?
-                        <SettingIcon onClick={handleClickSettingIcon} className='settingIcon' />
+                        <SettingIcon onClick={handleClickSettingIcon} className='hdr87settingIcon' />
                     : null
                 }
             </div>
-            <div className='gameSettingContainer'>
-               {showSetting ? <GameSettings className='gameSetting'/> : null}
+            <div className='hdr23gameSettingContainer'>
+               {showSetting ? <GameSettings className='hdr12gameSetting'/> : null}
             </div>
             {
                 breakPoint === 'mobile' ?
                     <ul>
-                        <li onClick={()=>handleTabClick("playground")} className={`${selectedTab==='playground'?'listActive':''}`}>Playground</li>
-                        <li onClick={()=>handleTabClick("leaderboard")} className={`${selectedTab==='leaderboard'?'listActive':''}`}>Leaderboard</li>
+                        <li onClick={()=>handleTabClick("playground")} className={`${selectedTab==='playground'?'hdr77listActive':''}`}>Playground</li>
+                        <li onClick={()=>handleTabClick("leaderboard")} className={`${selectedTab==='leaderboard'?'hdr77listActive':''}`}>Leaderboard</li>
                     </ul>
                 : null
             }
         </nav>
     )
-}
+};
+export default Header;

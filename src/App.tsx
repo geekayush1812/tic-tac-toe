@@ -2,10 +2,8 @@ import './App.css';
 
 import { useEffect } from 'react';
 
-import { Header } from 'common/Header/Header';
-import {
-  HeightBoundContainer,
-} from 'common/HeightBoundContainer/HeightBoundContainer';
+import { Header } from 'common/Header';
+import { HeightBoundContainer } from 'common/HeightBoundContainer';
 import { updateBreakPoint } from 'store/actions/breakPointsAction';
 import { updateLeaderboard } from 'store/actions/leaderboardAction';
 import {
@@ -14,17 +12,17 @@ import {
 } from 'store/hooks';
 import { selectedTab } from 'types/reducerTypes/appReducerTypes';
 import { leaderboardUserDetails } from 'types/viewsTypes';
-import { localStorageKeys } from 'utils/constants/localstorageKeys';
 import {
+  localStorageKeys,
   uiBreakPoints,
-  UiBreakPoints,
-} from 'utils/constants/uiBreakPoints';
+} from 'utils/constants';
+import { UiBreakPoints } from 'utils/constants/uiBreakPoints';
 import {
   findAndPushPlayerInLeaderboard,
-} from 'utils/helpers/findAndPushPlayerInLeaderboard';
-import { getLocalStorageValue } from 'utils/helpers/getLocalStorageValue';
-import { getNewLeaderboardUser } from 'utils/helpers/getNewLeaderboardUser';
-import { uiBreakPointObserver } from 'utils/helpers/uiBreakPointObserver';
+  getLocalStorageValue,
+  getNewLeaderboardUser,
+  uiBreakPointObserver,
+} from 'utils/helpers';
 import { GameMenuWrapper } from 'views/GameMenu/GameMenu';
 import { GameResult } from 'views/GameResult/GameResult';
 import { Leaderboard } from 'views/Leaderboard/Leaderboard';
@@ -53,13 +51,13 @@ function App() {
   }
   const renderPlayground = () => {
     if(checkTabForMobileView("playground")){
-      return <Playground className={`playgroundGrid`}/>;
+      return <Playground className={`app87playgroundGrid`}/>;
     }
     return null;
   }
   const renderLeaderboard = () => {
     if(checkTabForMobileView("leaderboard")){
-      return <Leaderboard className={`leaderboardGrid`} /> ;
+      return <Leaderboard className={`app56leaderboardGrid`} /> ;
     }
     return null;
   }
@@ -97,12 +95,12 @@ function App() {
     }
   },[playerOne, playerTwo, winnerNoughtAndCross, dispatch, hasGameHaveWinner]);
   return (
-    <div className='appContainer'>
+    <div className='app34appContainer'>
       <Header />
       { 
         playing ? null : <GameMenuWrapper />
       }
-      <HeightBoundContainer className={'heightBoundContainer playgroundLeaderboardGrid'}>
+      <HeightBoundContainer className={'app43heightBoundContainer app38playgroundLeaderboardGrid'}>
         {renderPlayground()}
         {renderLeaderboard()}
       </HeightBoundContainer>

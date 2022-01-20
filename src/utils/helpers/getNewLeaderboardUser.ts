@@ -1,6 +1,6 @@
 import { GetNewLeaderboardUser } from 'types/helpersTypes';
 
-export const getNewLeaderboardUser:GetNewLeaderboardUser = {
+const getNewLeaderboardUser:GetNewLeaderboardUser = {
     winner:(winnerPlayer)=>({
         name:winnerPlayer.name,
         wonMatches:1,
@@ -12,3 +12,4 @@ export const getNewLeaderboardUser:GetNewLeaderboardUser = {
         lostMatches:1
     })
 };
+export default getNewLeaderboardUser;

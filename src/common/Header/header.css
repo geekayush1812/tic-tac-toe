@@ -1,35 +1,35 @@
 nav {
     background-color: var(--primaryColor900);
 }
-.headerWrapper,
-.gameSettingContainer{
+.hdr87headerWrapper,
+.hdr23gameSettingContainer{
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.headerWrapper > h1 {
+.hdr87headerWrapper > h1 {
     color: var(--white800);
     padding: 1rem;
 }
-.headerWrapper > h1,
-.headerWrapper > .settingIcon {
+.hdr87headerWrapper > h1,
+.hdr87headerWrapper > .hdr87settingIcon {
     opacity: 0.8;
 }
-.headerWrapper > .settingIcon {
+.hdr87headerWrapper > .hdr87settingIcon {
     position: absolute;
     height: 28px;
     width: 28px;
     right: 8px;
 }
 
-.settingIcon > path,
-.settingIcon > circle {
+.hdr87settingIcon > path,
+.hdr87settingIcon > circle {
     stroke: var(--white800);
 }
-.gameSettingContainer {
+.hdr23gameSettingContainer {
     padding: 0.5rem 0;
 }
-.gameSetting {
+.hdr12gameSetting {
     margin-top: 0 !important;
     background-color: var(--white600);
     padding: 0.5rem 4rem;
@@ -49,6 +49,6 @@ nav > ul > li {
     background-color: var(--primaryColor900);
     cursor: pointer;
 }
-li.listActive {
+li.hdr77listActive {
     color: var(--white);  
 }

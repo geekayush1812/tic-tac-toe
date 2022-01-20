@@ -1,11 +1,11 @@
-.playerContainer {
+.ap87playerContainer {
     display: flex;
     width: 70%;
     max-width: 400px;
     margin: 0 auto 4rem auto;
     position: relative;
 }
-.playerContainer .player {
+.ap87playerContainer .ap45player {
     flex-basis: 50%;
     display: flex;
     flex-direction: column;
@@ -14,26 +14,26 @@
     gap:0.2rem 0;
     margin-bottom: 1.5rem;
 }
-.player span.crossOrNoughtChoice {
+.ap45player span.ap87crossOrNoughtChoice {
     font-size: 1.5rem;
     font-weight: bold;
 }
-.player span.playerName {
+.ap45player span.ap56playerName {
     font-size: 1.1rem;
 }
-.player span.crossOrNoughtChoice,
-.player span.playerName {
+.ap45player span.ap87crossOrNoughtChoice,
+.ap45player span.ap56playerName {
     color: var(--white500);
     transition: color 300ms;
 }
 
-.activePlayer span.crossOrNoughtChoice {
+.ap24activePlayer span.ap87crossOrNoughtChoice {
     color: var(--white);
 }
-.activePlayer span.playerName {
+.ap24activePlayer span.ap56playerName {
     color: var(--white800);
 }
-.activePlayerIndicator {
+.ap45activePlayerIndicator {
     position: absolute;
     bottom: 0;
     height: 3px;
@@ -43,6 +43,6 @@
     transform: translateX(0%);
     transition: transform 300ms;
 }
-.activePlayerIndicator.moveExtreme {
+.ap45activePlayerIndicator.ap96moveExtreme {
     transform: translateX(100%);
 }

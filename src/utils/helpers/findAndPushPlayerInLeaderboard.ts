@@ -1,6 +1,6 @@
 import { FindAndPushPlayerInLeaderboard } from 'types/helpersTypes';
 
-export const findAndPushPlayerInLeaderboard:FindAndPushPlayerInLeaderboard = ({newLeaderboard,newPlayerDetails,leaderboard,player,result})=>{
+const findAndPushPlayerInLeaderboard:FindAndPushPlayerInLeaderboard = ({newLeaderboard,newPlayerDetails,leaderboard,player,result})=>{
     const playerIndex = leaderboard.findIndex((leaderboardPlayer)=>leaderboardPlayer.name === player.name);
     const isPlayerInLeaderboard = playerIndex !== -1;
     if(isPlayerInLeaderboard){
@@ -12,3 +12,4 @@ export const findAndPushPlayerInLeaderboard:FindAndPushPlayerInLeaderboard = ({n
         newLeaderboard.push(newPlayerDetails);
     }
 }
+export default findAndPushPlayerInLeaderboard;

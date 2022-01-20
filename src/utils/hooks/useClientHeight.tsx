@@ -5,7 +5,7 @@ import {
 
 import { UseClientHeight } from 'types/hooksTypes';
 
-export const  useClientHeight:UseClientHeight=(ref,initialValue)=>{
+const useClientHeight:UseClientHeight=(ref,initialValue)=>{
     const [elementHeight,setElementHeight]=useState(initialValue);
     useLayoutEffect(()=>{
         const elementYposition=ref.current?.offsetTop;
@@ -14,3 +14,4 @@ export const  useClientHeight:UseClientHeight=(ref,initialValue)=>{
 
     return elementHeight;
 }
+export default useClientHeight;

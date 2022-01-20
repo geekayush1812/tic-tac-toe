@@ -7,11 +7,11 @@ import {
 } from 'react';
 import ReactDOM from 'react-dom';
 
+import { ReactComponent as DrawIcon } from 'assets/images/svg/scale.svg';
+import { ReactComponent as WinnerIcon } from 'assets/images/svg/winner.svg';
 import drawSound from 'assets/sounds/drawSound.wav';
 import winnerSound from 'assets/sounds/winSound.wav';
-import { ReactComponent as DrawIcon } from 'assets/svg/scale.svg';
-import { ReactComponent as WinnerIcon } from 'assets/svg/winner.svg';
-import { Backdrop } from 'common/Backdrop/Backdrop';
+import { Backdrop } from 'common/Backdrop';
 import { batch } from 'react-redux';
 import {
   partialAppResetToPlayAgain,
@@ -23,8 +23,8 @@ import {
   useDispatch,
   useSelector,
 } from 'store/hooks';
-import { Button } from 'ui/Button/Button';
-import { useMountAnimation } from 'utils/hooks/useMountAnimation';
+import { Button } from 'ui/Button';
+import { useMountAnimation } from 'utils/hooks';
 
 const GameResultCore = () => {
     const mounted = useMountAnimation();
@@ -71,19 +71,19 @@ const GameResultCore = () => {
         })
     },[dispatch]);
     return (
-        <Backdrop className='flexCenter'>
-            <div className={`gameResultWrapperCard ${mounted?'fadeIn':''}`}>
-                <div className="resultContainer">
+        <Backdrop className='gr54flexCenter'>
+            <div className={`gr82gameResultWrapperCard ${mounted?'gr72fadeIn':''}`}>
+                <div className="gr77resultContainer">
                     <h2>{resultMessage}</h2>
                     {
-                        isGameDraw ? <DrawIcon className='resultIcon'/> : null
+                        isGameDraw ? <DrawIcon className='gr28resultIcon'/> : null
                     }
                     {
-                        gameHasWinner ? <WinnerIcon className='resultIcon' /> : null
+                        gameHasWinner ? <WinnerIcon className='gr28resultIcon' /> : null
                     }
                 </div>
-                <div className="actionButtonContainer">
-                    <Button text='Launch new game' className='secondaryButton' disabled={false} onClick={batchResetAppToLaunchNewGame} />
+                <div className="gr18actionButtonContainer">
+                    <Button text='Launch new game' className='gr87secondaryButton' disabled={false} onClick={batchResetAppToLaunchNewGame} />
                     <Button text='Play again' disabled={false} onClick={batchResetAppToPlayAgain} />
                 </div>
             </div>

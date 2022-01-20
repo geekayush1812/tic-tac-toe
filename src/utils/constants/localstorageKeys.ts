@@ -1,3 +1,4 @@
-export const localStorageKeys = {
+const localStorageKeys = {
     leaderboard:'leaderboard'
 }
+export default localStorageKeys;

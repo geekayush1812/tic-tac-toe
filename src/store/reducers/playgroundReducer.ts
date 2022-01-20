@@ -4,8 +4,8 @@ import {
   playground,
   playgroundActionType,
 } from 'types/reducerTypes/playgroundReducerTypes';
-import { playgroundGridNotation } from 'utils/constants/playgroundGridNotation';
-import { pushToArray } from 'utils/helpers/pushToArray';
+import { playgroundGridNotation } from 'utils/constants';
+import { pushToArray } from 'utils/helpers';
 
 const initialPlaygroundState:playground={
     currentPlayer: "playerOne",
