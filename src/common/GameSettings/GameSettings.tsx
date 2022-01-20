@@ -6,21 +6,22 @@ import {
   useSelector,
 } from 'store/hooks';
 import { GameSettingsProps } from 'types/commonTypes';
-import { Checkbox } from 'ui/Checkbox/Checkbox';
+import { Checkbox } from 'ui/Checkbox';
 
-export const GameSettings = ({className}:GameSettingsProps) => {
+const GameSettings = ({className}:GameSettingsProps) => {
     const {hasSound}=useSelector(state=>state.gameMenuReducer);
     const dispatch = useDispatch();
     const onGameSoundChange=()=>{
         dispatch(updateGameSound());
     }
     return (
-        <div className={`menuItem soundMenuItem ${className ? className : ''}`}>
+        <div className={`gs56menuItem gs45soundMenuItem ${className ? className : ''}`}>
             <h3>Sound</h3>
             <Checkbox 
-                className='checkBox'
+                className='gs87checkBox'
                 checked={hasSound} 
                 onChange={onGameSoundChange} />
         </div>
     )
 }
+export default GameSettings;

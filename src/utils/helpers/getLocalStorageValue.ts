@@ -1,4 +1,4 @@
-export const getLocalStorageValue = (key:string)=>{
+const getLocalStorageValue = (key:string)=>{
     try {
         const item = window.localStorage.getItem(key);
         return item ? JSON.parse(item) : null;
@@ -7,3 +7,4 @@ export const getLocalStorageValue = (key:string)=>{
         return null;
       }
 };
+export default getLocalStorageValue;

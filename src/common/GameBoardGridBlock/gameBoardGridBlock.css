@@ -1,22 +1,22 @@
-.gridBlock {
+.gbg87gridBlock {
     border: 1px solid var(--white500);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.gridBlock:nth-child(3n + 1) {
+.gbg87gridBlock:nth-child(3n + 1) {
     border-left: none;
 }
-.gridBlock:nth-child(3n + 3) {
+.gbg87gridBlock:nth-child(3n + 3) {
     border-right: none;
 }
-.gridBlock:nth-child(-n + 3) {
+.gbg87gridBlock:nth-child(-n + 3) {
     border-top: none;
 }
-.gridBlock:nth-last-child(-n + 3){
+.gbg87gridBlock:nth-last-child(-n + 3){
     border-bottom: none;
 }
-.emptyGridBlock:hover {
+.gbg98emptyGridBlock:hover {
     background-color: var(--primaryColor500);
 }

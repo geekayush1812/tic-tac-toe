@@ -9,13 +9,11 @@ import {
   useDispatch,
   useSelector,
 } from 'store/hooks';
-import { NoughtOrCross } from 'ui/NoughtOrCross/NoughtOrCross';
-import {
-  SwitchNoughtAndCross,
-} from 'ui/SwitchNoughtAndCross/SwitchNoughtAndCross';
-import { TextInput } from 'ui/TextInput/TextInput';
+import { NoughtOrCross } from 'ui/NoughtOrCross';
+import { SwitchNoughtAndCross } from 'ui/SwitchNoughtAndCross';
+import { TextInput } from 'ui/TextInput';
 
-export const PlayerSettings = () => {
+const PlayerSettings = () => {
     const {
         name:playerOneName,
         noughtOrCross:playerOneNoughtOrCross
@@ -35,20 +33,21 @@ export const PlayerSettings = () => {
         dispatch(switchPlayerNoughtAndCrossChoice());
     }
     return (
-        <div className='playerSettingsContainer'>
-            <NoughtOrCross className='noughtOrCrossTop' type={playerOneNoughtOrCross} />
+        <div className='ps87playerSettingsContainer'>
+            <NoughtOrCross className='ps87noughtOrCrossTop' type={playerOneNoughtOrCross} />
             <TextInput 
-                className="playerNameInputTop" 
+                className="ps87playerNameInputTop" 
                 label='Player 1'
                 value={playerOneName}
                 onChange={handleChangePlayerOneName} />
-            <SwitchNoughtAndCross className='noughtAndCrossSwitch' onClick={handleSwitchNoughtAndCross} />
-            <NoughtOrCross className='noughtOrCrossBottom' type={playerTwoNoughtOrCross} />
+            <SwitchNoughtAndCross className='ps45noughtAndCrossSwitch' onClick={handleSwitchNoughtAndCross} />
+            <NoughtOrCross className='ps87noughtOrCrossBottom' type={playerTwoNoughtOrCross} />
             <TextInput 
-                className="playerNameInputBottom" 
+                className="ps54playerNameInputBottom" 
                 label='Player 2'
                 value={playerTwoName}
                 onChange={handleChangePlayerTwoName} />
         </div>
     )
 }
+export default PlayerSettings;

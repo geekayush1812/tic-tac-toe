@@ -1,4 +1,4 @@
-.playerSettingsContainer {
+.ps87playerSettingsContainer {
     display: grid;
     grid-template-columns:40px 1fr 1fr;
     gap:0.5rem 0.4rem;
@@ -6,18 +6,18 @@
                         "noughtAndCrossSwitch . ."
                         "noughtAndCrossBottom playerInputBottom playerInputBottom";
 }
-.noughtOrCrossTop {
+.ps87noughtOrCrossTop {
     grid-area: noughtAndCrossTop;
 }
-.noughtOrCrossBottom {
+.ps87noughtOrCrossBottom {
     grid-area: noughtAndCrossBottom;
 }
-.playerNameInputTop {
+.ps87playerNameInputTop {
     grid-area: playerInputTop;
 }
-.playerNameInputBottom {
+.ps54playerNameInputBottom {
     grid-area: playerInputBottom;
 }
-.noughtAndCrossSwitch {
+.ps45noughtAndCrossSwitch {
     grid-area: noughtAndCrossSwitch;
 }

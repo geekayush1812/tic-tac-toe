@@ -5,10 +5,12 @@ import {
 } from 'assets/svg/exchangeArrow.svg';
 import { SwitchNoughtAndCrossProps } from 'types/uiTypes';
 
-export const SwitchNoughtAndCross = ({className,onClick}:SwitchNoughtAndCrossProps) => {
+const SwitchNoughtAndCross = ({className,onClick}:SwitchNoughtAndCrossProps) => {
     return (
-        <div onClick={onClick} className={`exchangeArrowContainer ${className ? className : ''}`}>
-            <ExchangeArrowIcon className='exchangeArrowIcon' />
+        <div onClick={onClick} className={`snc64exchangeArrowContainer ${className ? className : ''}`}>
+            <ExchangeArrowIcon className='snc82exchangeArrowIcon' />
         </div>
     )
 }
+
+export default SwitchNoughtAndCross;

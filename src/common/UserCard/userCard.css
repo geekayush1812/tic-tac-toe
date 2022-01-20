@@ -1,36 +1,36 @@
-.userCardContainer{
+.uc87userCardContainer{
     display: flex;
     padding: 0.5rem 1rem;
     align-items: center;
     gap:0 1rem;
     margin-bottom: 0.5rem;
 }
-.userCardContainer .userIcon path{
+.uc87userCardContainer .uc76userIcon path{
      fill: var(--white500);
 }
-.userDetailsContainer span.userName {
+.uc98userDetailsContainer span.uc76userName {
     font-size: 1.1rem;
     color: var(--white900);
 }
-.winsAndLosses {
+.uc82winsAndLosses {
     display: flex;
     margin-top: 0.2rem;
 }
-.winsAndLosses span{
+.uc82winsAndLosses span{
     color: var(--white900);
     font-weight: bold;
 }
-.winsAndLosses div:first-child {
+.uc82winsAndLosses div:first-child {
     border-right: 2px solid var(--white500);
 }
-.winsContainer {
+.uc12winsContainer {
     padding-right: 0.5rem;
 }
-.lossesContainer {
+.uc81lossesContainer {
     padding-left: 0.5rem;
 }
-.winsAndLosses span:first-child,
-.lossesContainer span:first-child {
+.uc82winsAndLosses span:first-child,
+.uc81lossesContainer span:first-child {
     color: var(--white800);
     font-size: 0.9rem;
 }
