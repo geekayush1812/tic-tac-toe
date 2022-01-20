@@ -31,6 +31,9 @@ nav {
 }
 .gameSetting {
     margin-top: 0 !important;
+    background-color: var(--white600);
+    padding: 0.5rem 4rem;
+    border-radius: var(--roundness-s);
 }
 nav > ul {
     list-style-type: none;
