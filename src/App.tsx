@@ -43,21 +43,22 @@ function App() {
     }
     uiBreakPointObserver(uiBreakPoints,setBreakPoint);
   },[dispatch]);
-  const checkTabForMobileAndDesktopView = (tab:selectedTab) => {
+  const checkTabForMobileView = (tab:selectedTab) => {
     const isDeskTopView = breakPoint === 'desktop';
+    const isTabletView = breakPoint === 'tablet';
     const isMobileView = breakPoint === 'mobile';
     const isThisTabSelected = selectedTab === tab;
     
-    return isDeskTopView || (isMobileView && isThisTabSelected);
+    return isDeskTopView || isTabletView || (isMobileView && isThisTabSelected);
   }
   const renderPlayground = () => {
-    if(checkTabForMobileAndDesktopView("playground")){
+    if(checkTabForMobileView("playground")){
       return <Playground className={`playgroundGrid`}/>;
     }
     return null;
   }
   const renderLeaderboard = () => {
-    if(checkTabForMobileAndDesktopView("leaderboard")){
+    if(checkTabForMobileView("leaderboard")){
       return <Leaderboard className={`leaderboardGrid`} /> ;
     }
     return null;
