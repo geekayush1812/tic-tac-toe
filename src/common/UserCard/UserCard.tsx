@@ -3,7 +3,7 @@ import './userCard.css';
 import { ReactComponent as UserIcon } from 'assets/svg/userIcon.svg';
 import { UserCardProps } from 'types/commonTypes';
 
-export const UserCard = ({user}:UserCardProps) => {
+const UserCard = ({user}:UserCardProps) => {
      return (
          <div className='userCardContainer'>
              <UserIcon className='userIcon' />
@@ -22,5 +22,6 @@ export const UserCard = ({user}:UserCardProps) => {
              </div>
          </div>
      )
- }
+}
+export default UserCard;
  

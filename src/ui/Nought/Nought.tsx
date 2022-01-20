@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import noughtSound from 'assets/sounds/noughtSound.wav';
 import { useSelector } from 'store/hooks';
 
-export const Nought = () => {
+const Nought = () => {
     const hasSound=useSelector(state=>state.gameMenuReducer.hasSound);
     useEffect(()=>{
         if(hasSound){
@@ -19,3 +19,4 @@ export const Nought = () => {
         </svg> 
     )
 }
+export default Nought;

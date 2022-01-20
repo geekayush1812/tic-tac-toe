@@ -5,9 +5,7 @@ import {
   useEffect,
 } from 'react';
 
-import {
-  GameBoardGridBlock,
-} from 'common/GameBoardGridBlock/GameBoardGridBlock';
+import { GameBoardGridBlock } from 'common/GameBoardGridBlock';
 import { batch } from 'react-redux';
 import {
   updateGameResult,
@@ -19,10 +17,10 @@ import {
 } from 'store/hooks';
 import { blockType } from 'types/commonTypes';
 import { noughtOrCross } from 'types/reducerTypes/gameMenuReducerTypes';
-import { playgroundGridNotation } from 'utils/constants/playgroundGridNotation';
-import { checkWinner } from 'utils/helpers/checkWinner';
+import { playgroundGridNotation } from 'utils/constants';
+import { checkWinner } from 'utils/helpers';
 
-export const GameBoardGrid = () => {
+const GameBoardGrid = () => {
     const {gameBoardArray,crossSequence,noughtSequence}=useSelector(state=>state.playgroundReducer);
     const dispatch = useDispatch();
     useEffect(()=>{
@@ -68,3 +66,4 @@ export const GameBoardGrid = () => {
         </div>
     )
 }
+export default GameBoardGrid

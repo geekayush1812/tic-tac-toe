@@ -2,7 +2,7 @@ import './textInput.css';
 
 import { TextInputProps } from 'types/uiTypes';
 
-export const TextInput = ({label,value,onChange,className}:TextInputProps) => {
+const TextInput = ({label,value,onChange,className}:TextInputProps) => {
     return (
         <div className={`inputContainer ${className ? className :''}`}>
             <span>{label}</span>
@@ -10,3 +10,4 @@ export const TextInput = ({label,value,onChange,className}:TextInputProps) => {
         </div>
     )
 }
+export default TextInput;

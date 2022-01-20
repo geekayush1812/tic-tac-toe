@@ -11,7 +11,7 @@ import drawSound from 'assets/sounds/drawSound.wav';
 import winnerSound from 'assets/sounds/winSound.wav';
 import { ReactComponent as DrawIcon } from 'assets/svg/scale.svg';
 import { ReactComponent as WinnerIcon } from 'assets/svg/winner.svg';
-import { Backdrop } from 'common/Backdrop/Backdrop';
+import { Backdrop } from 'common/Backdrop';
 import { batch } from 'react-redux';
 import {
   partialAppResetToPlayAgain,
@@ -23,8 +23,8 @@ import {
   useDispatch,
   useSelector,
 } from 'store/hooks';
-import { Button } from 'ui/Button/Button';
-import { useMountAnimation } from 'utils/hooks/useMountAnimation';
+import { Button } from 'ui/Button';
+import { useMountAnimation } from 'utils/hooks';
 
 const GameResultCore = () => {
     const mounted = useMountAnimation();

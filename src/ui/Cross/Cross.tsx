@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import crossSound from 'assets/sounds/crossSound.wav';
 import { useSelector } from 'store/hooks';
 
-export const Cross = () => {
+const Cross = () => {
     const hasSound=useSelector(state=>state.gameMenuReducer.hasSound);
     useEffect(()=>{
         if(hasSound){
@@ -20,3 +20,4 @@ export const Cross = () => {
         </svg>
     )
 }
+export default Cross;

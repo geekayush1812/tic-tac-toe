@@ -1,4 +1,4 @@
-export function setLocalStorageValue<T>(key:string,value:T){
+function setLocalStorageValue<T>(key:string,value:T){
     try {
         const stringifiedValue = JSON.stringify(value);
         window.localStorage.setItem(key, stringifiedValue);
@@ -7,3 +7,4 @@ export function setLocalStorageValue<T>(key:string,value:T){
         return null;
       }
 };
+export default setLocalStorageValue;

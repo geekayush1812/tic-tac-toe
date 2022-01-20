@@ -2,7 +2,7 @@ import './activePlayer.css';
 
 import { useSelector } from 'store/hooks';
 
-export const ActivePlayer = () => {
+const ActivePlayer = () => {
     const {playerOne,playerTwo}=useSelector(state=>state.gameMenuReducer);
     const currentPlayer=useSelector(state=>state.playgroundReducer.currentPlayer);
     return (
@@ -27,3 +27,4 @@ export const ActivePlayer = () => {
         </div>
     )
 }
+export default ActivePlayer;

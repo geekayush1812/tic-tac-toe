@@ -1,0 +1,1 @@
+export { default as EmptyLeaderboard } from './EmptyLeaderboard';

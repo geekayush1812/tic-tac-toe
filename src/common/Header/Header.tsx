@@ -6,7 +6,7 @@ import {
 } from 'react';
 
 import { ReactComponent as SettingIcon } from 'assets/svg/settingIcon.svg';
-import { GameSettings } from 'common/GameSettings/GameSettings';
+import { GameSettings } from 'common/GameSettings';
 import { setSelectedTab } from 'store/actions/appAction';
 import {
   useDispatch,
@@ -14,7 +14,7 @@ import {
 } from 'store/hooks';
 import { selectedTab } from 'types/reducerTypes/appReducerTypes';
 
-export const Header = () => {
+const Header = () => {
     const breakPoint = useSelector(state=>state.breakPointReducer.breakPoint);
     const selectedTab = useSelector(state=>state.appReducer.selectedTab);
     const [showSetting,setShowSetting] = useState(breakPoint==='mobile'?false:true);
@@ -57,4 +57,5 @@ export const Header = () => {
             }
         </nav>
     )
-}
+};
+export default Header;

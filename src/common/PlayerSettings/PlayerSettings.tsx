@@ -9,13 +9,11 @@ import {
   useDispatch,
   useSelector,
 } from 'store/hooks';
-import { NoughtOrCross } from 'ui/NoughtOrCross/NoughtOrCross';
-import {
-  SwitchNoughtAndCross,
-} from 'ui/SwitchNoughtAndCross/SwitchNoughtAndCross';
-import { TextInput } from 'ui/TextInput/TextInput';
+import { NoughtOrCross } from 'ui/NoughtOrCross';
+import { SwitchNoughtAndCross } from 'ui/SwitchNoughtAndCross';
+import { TextInput } from 'ui/TextInput';
 
-export const PlayerSettings = () => {
+const PlayerSettings = () => {
     const {
         name:playerOneName,
         noughtOrCross:playerOneNoughtOrCross
@@ -52,3 +50,4 @@ export const PlayerSettings = () => {
         </div>
     )
 }
+export default PlayerSettings;

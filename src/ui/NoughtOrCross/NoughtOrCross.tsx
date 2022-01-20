@@ -2,7 +2,7 @@ import './noughtOrCross.css';
 
 import { NoughtOrCrossProps } from 'types/uiTypes';
 
-export const NoughtOrCross = ({type,className}:NoughtOrCrossProps) => {
+const NoughtOrCross = ({type,className}:NoughtOrCrossProps) => {
     return (
         <div className={`noughtOrCrossContainer ${className ? className : ''}`}>
             <span className='noughtOrCrossText'>
@@ -11,3 +11,4 @@ export const NoughtOrCross = ({type,className}:NoughtOrCrossProps) => {
         </div>
     )
 }
+export default NoughtOrCross;

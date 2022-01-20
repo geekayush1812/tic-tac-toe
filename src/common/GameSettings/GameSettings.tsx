@@ -6,9 +6,9 @@ import {
   useSelector,
 } from 'store/hooks';
 import { GameSettingsProps } from 'types/commonTypes';
-import { Checkbox } from 'ui/Checkbox/Checkbox';
+import { Checkbox } from 'ui/Checkbox';
 
-export const GameSettings = ({className}:GameSettingsProps) => {
+const GameSettings = ({className}:GameSettingsProps) => {
     const {hasSound}=useSelector(state=>state.gameMenuReducer);
     const dispatch = useDispatch();
     const onGameSoundChange=()=>{
@@ -24,3 +24,4 @@ export const GameSettings = ({className}:GameSettingsProps) => {
         </div>
     )
 }
+export default GameSettings;

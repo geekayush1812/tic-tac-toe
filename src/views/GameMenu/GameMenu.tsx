@@ -3,9 +3,9 @@ import './gameMenu.css';
 import { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 
-import { Backdrop } from 'common/Backdrop/Backdrop';
-import { GameSettings } from 'common/GameSettings/GameSettings';
-import { PlayerSettings } from 'common/PlayerSettings/PlayerSettings';
+import { Backdrop } from 'common/Backdrop';
+import { GameSettings } from 'common/GameSettings';
+import { PlayerSettings } from 'common/PlayerSettings';
 import {
   updatePlaying,
   updateReadyToPlay,
@@ -14,9 +14,9 @@ import {
   useDispatch,
   useSelector,
 } from 'store/hooks';
-import { Button } from 'ui/Button/Button';
-import { isValidPlayerName } from 'utils/helpers/isValidPlayerName';
-import { useMountAnimation } from 'utils/hooks/useMountAnimation';
+import { Button } from 'ui/Button';
+import { isValidPlayerName } from 'utils/helpers';
+import { useMountAnimation } from 'utils/hooks';
 
 const GameMenu = () => {
     const mounted = useMountAnimation();

@@ -2,7 +2,7 @@ import './checkbox.css';
 
 import { CheckboxProps } from 'types/uiTypes';
 
-export const Checkbox = ({checked,className,onChange}:CheckboxProps)=>{
+const Checkbox = ({checked,className,onChange}:CheckboxProps)=>{
     return (
         <label className={`checkBoxLabel ${className ? className : ''}`} htmlFor='checkBox'>
             <input 
@@ -15,3 +15,4 @@ export const Checkbox = ({checked,className,onChange}:CheckboxProps)=>{
         </label>
     )
 }
+export default Checkbox;

@@ -1,7 +1,7 @@
 import './playground.css';
 
-import { ActivePlayer } from 'common/ActivePlayer/ActivePlayer';
-import { GameBoardGrid } from 'common/GameBoardGrid/GameBoardGrid';
+import { ActivePlayer } from 'common/ActivePlayer';
+import { GameBoardGrid } from 'common/GameBoardGrid';
 import { useSelector } from 'store/hooks';
 import { playgroundProps } from 'types/viewsTypes';
 
