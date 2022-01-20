@@ -5,7 +5,9 @@ import {
   useState,
 } from 'react';
 
-import { ReactComponent as SettingIcon } from 'assets/svg/settingIcon.svg';
+import {
+  ReactComponent as SettingIcon,
+} from 'assets/images/svg/settingIcon.svg';
 import { GameSettings } from 'common/GameSettings';
 import { setSelectedTab } from 'store/actions/appAction';
 import {
