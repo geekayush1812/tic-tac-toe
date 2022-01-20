@@ -13,6 +13,7 @@ import {
   leaderboardUser,
   leaderboardUserDetails,
 } from 'types/viewsTypes';
+import { EmptyLeaderboard } from 'ui/EmptyLeaderboard/EmptyLeaderboard';
 import { localStorageKeys } from 'utils/constants/localstorageKeys';
 import { getLocalStorageValue } from 'utils/helpers/getLocalStorageValue';
 
@@ -31,12 +32,14 @@ export const Leaderboard = ({className}:leaderboardProps) => {
             return <UserCard key={index} user={player} />
         })
     }
+    const isLeaderboardNotNull = leaderboard !== null;
+    const isLeaderboardNotEmpty = isLeaderboardNotNull && leaderboard.length !== 0;
     return (
         <section className={`leaderboard ${className ? className : ''}`}>
             <h2>Leaderboard</h2>
             <div className="userCardListContainer">
                 {
-                    leaderboard ? renderLeaderboard(leaderboard) : null
+                    isLeaderboardNotNull && isLeaderboardNotEmpty ? renderLeaderboard(leaderboard) : <EmptyLeaderboard />
                 }
             </div>
         </section>

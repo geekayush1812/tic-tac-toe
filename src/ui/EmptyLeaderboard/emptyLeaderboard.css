@@ -1,0 +1,10 @@
+.el24leaderboardContainer{
+    height: 300px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.el24leaderboardContainer h3{
+    color: var(--white500);
+}
