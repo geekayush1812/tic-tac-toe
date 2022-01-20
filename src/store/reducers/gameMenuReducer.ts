@@ -5,7 +5,6 @@ import {
 } from 'types/reducerTypes/gameMenuReducerTypes';
 
 const initialGameMenuState:gameMenu={
-    gameView:'Standard',
     hasSound:true,
     playerOne:{
         name:'',
@@ -22,11 +21,6 @@ const gameMenuReducer=(
     action:gameMenuActionType
 ) : gameMenu => {
     switch(action.type){
-        case gameMenuActionTypes.UPDATE_GAME_VIEW:
-            return {
-                ...state,
-                gameView:action.payload
-            };
         case gameMenuActionTypes.UPDATE_GAME_SOUND:
             return {
                 ...state,
