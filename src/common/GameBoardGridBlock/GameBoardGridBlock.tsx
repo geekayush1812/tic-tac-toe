@@ -46,7 +46,7 @@ const GameBoardGridBlock = ({blockType,gridIndex}:GameBoardGridBlockProps) => {
     }
     
     return (
-        <div onClick={handleClickGridBlock} className={`gridBlock ${blockType === 'empty' ? 'emptyGridBlock':''}`}>
+        <div onClick={handleClickGridBlock} className={`gbg87gridBlock ${blockType === 'empty' ? 'gbg98emptyGridBlock':''}`}>
             {blockType === 'cross' ? <Cross /> : null }
             {blockType === 'nought' ? <Nought /> : null}
         </div>

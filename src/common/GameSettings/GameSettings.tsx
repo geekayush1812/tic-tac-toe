@@ -15,10 +15,10 @@ const GameSettings = ({className}:GameSettingsProps) => {
         dispatch(updateGameSound());
     }
     return (
-        <div className={`menuItem soundMenuItem ${className ? className : ''}`}>
+        <div className={`gs56menuItem gs45soundMenuItem ${className ? className : ''}`}>
             <h3>Sound</h3>
             <Checkbox 
-                className='checkBox'
+                className='gs87checkBox'
                 checked={hasSound} 
                 onChange={onGameSoundChange} />
         </div>

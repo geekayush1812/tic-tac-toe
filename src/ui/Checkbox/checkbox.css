@@ -1,7 +1,7 @@
-.checkBoxLabel > input[type='checkbox'] {
+.cb87checkBoxLabel > input[type='checkbox'] {
     display: none;
 }
-.customCheckBox {
+.cb83customCheckBox {
     height: 15px;
     width: 15px;
     border: 1px solid var(--primaryColor900);
@@ -12,11 +12,11 @@
     align-items: center;
     justify-content: center;
 }
-.checkBoxLabel > input[type='checkbox']:checked + .customCheckBox{
+.cb87checkBoxLabel > input[type='checkbox']:checked + .cb83customCheckBox{
     border: 1px solid var(--primaryColor500);
     background-color: var(--primaryColor500);
 }
-.checkBoxLabel > input[type='checkbox']:checked + .customCheckBox::after {
+.cb87checkBoxLabel > input[type='checkbox']:checked + .cb83customCheckBox::after {
     content: "";
     position: absolute;
     display: block;

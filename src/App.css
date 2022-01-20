@@ -1,34 +1,31 @@
-.appContainer{
+.app34appContainer{
     height: 100%;
     width: 100%;
     background-color: var(--primaryColor900);
 }
-.heightBoundContainer {
+.app43heightBoundContainer {
     background-color: var(--primaryColor800);
 }
-.playgroundLeaderboardGrid {
+.app38playgroundLeaderboardGrid {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 2fr minmax(400px,1fr);
     grid-template-areas: "playground leaderboard";
 }
-.playgroundGrid {
+.app87playgroundGrid {
     grid-area: playground;
 }
-.leaderboardGrid {
+.app56leaderboardGrid {
     grid-area: leaderboard;
 }
 
 @media screen and (max-width:600px) {
-    .playgroundLeaderboardGrid {
+    .app38playgroundLeaderboardGrid {
         grid-template-columns: 1fr;
         grid-template-areas: "commonGrid";
     }
-    .playgroundGrid,
-    .leaderboardGrid {
-        grid-area: commonGrid;
-    }
-    .commonGrid {
+    .app87playgroundGrid,
+    .app56leaderboardGrid {
         grid-area: commonGrid;
     }
 }

@@ -35,9 +35,9 @@ export const Leaderboard = ({className}:leaderboardProps) => {
     const isLeaderboardNotNull = leaderboard !== null;
     const isLeaderboardNotEmpty = isLeaderboardNotNull && leaderboard.length !== 0;
     return (
-        <section className={`leaderboard ${className ? className : ''}`}>
+        <section className={`lb38leaderboard ${className ? className : ''}`}>
             <h2>Leaderboard</h2>
-            <div className="userCardListContainer">
+            <div className="lb28userCardListContainer">
                 {
                     isLeaderboardNotNull && isLeaderboardNotEmpty ? renderLeaderboard(leaderboard) : <EmptyLeaderboard />
                 }

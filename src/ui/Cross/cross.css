@@ -1,8 +1,8 @@
-.crossSvgContainer {
+.cr87crossSvgContainer {
     max-width: 120px;
     max-height: 120px;
 }
-.lineDiagonal1,.lineDiagonal2 {
+.cr87lineDiagonal1,.cr28lineDiagonal2 {
     stroke-dasharray: 140;
     stroke-dashoffset: 140;
     animation: offset 500ms forwards;

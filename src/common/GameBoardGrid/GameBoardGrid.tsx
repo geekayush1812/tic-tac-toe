@@ -59,7 +59,7 @@ const GameBoardGrid = () => {
                     blockType={chooseGridType(item)} />
     }
     return (
-        <div className="gameBoardGrid">
+        <div className="gb34gameBoardGrid">
             {
                 gameBoardArray.map(renderGameBoardGridBlock)
             }

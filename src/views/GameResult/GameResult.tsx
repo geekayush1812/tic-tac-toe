@@ -71,19 +71,19 @@ const GameResultCore = () => {
         })
     },[dispatch]);
     return (
-        <Backdrop className='flexCenter'>
-            <div className={`gameResultWrapperCard ${mounted?'fadeIn':''}`}>
-                <div className="resultContainer">
+        <Backdrop className='gr54flexCenter'>
+            <div className={`gr82gameResultWrapperCard ${mounted?'gr72fadeIn':''}`}>
+                <div className="gr77resultContainer">
                     <h2>{resultMessage}</h2>
                     {
-                        isGameDraw ? <DrawIcon className='resultIcon'/> : null
+                        isGameDraw ? <DrawIcon className='gr28resultIcon'/> : null
                     }
                     {
-                        gameHasWinner ? <WinnerIcon className='resultIcon' /> : null
+                        gameHasWinner ? <WinnerIcon className='gr28resultIcon' /> : null
                     }
                 </div>
-                <div className="actionButtonContainer">
-                    <Button text='Launch new game' className='secondaryButton' disabled={false} onClick={batchResetAppToLaunchNewGame} />
+                <div className="gr18actionButtonContainer">
+                    <Button text='Launch new game' className='gr87secondaryButton' disabled={false} onClick={batchResetAppToLaunchNewGame} />
                     <Button text='Play again' disabled={false} onClick={batchResetAppToPlayAgain} />
                 </div>
             </div>

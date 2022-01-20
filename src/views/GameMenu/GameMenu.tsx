@@ -37,15 +37,15 @@ const GameMenu = () => {
         dispatch(updatePlaying(true));
     }
     return (
-        <Backdrop className='flexCenter'>
-            <div className={`gameMenuWrapperCard ${mounted?'fadeIn':''}`}>
+        <Backdrop className='gm72flexCenter'>
+            <div className={`gm28gameMenuWrapperCard ${mounted?'gm77fadeIn':''}`}>
                 <h2>Game Menu</h2>
                 <GameSettings />
-                <hr className='horizontalRule' />
+                <hr className='gm82horizontalRule' />
                 <PlayerSettings />
                 <Button 
                     text='Play' 
-                    className='playButton'  
+                    className='gm28playButton'  
                     disabled={!readyToPlay}
                     onClick={handleClickPlayButton}/>
             </div>

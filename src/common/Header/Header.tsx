@@ -36,22 +36,22 @@ const Header = () => {
     }
     return (
         <nav>
-            <div className="headerWrapper">
+            <div className="hdr87headerWrapper">
                 <h1>Tic Tac Toe</h1>
                 {
                     breakPoint === 'mobile' ?
-                        <SettingIcon onClick={handleClickSettingIcon} className='settingIcon' />
+                        <SettingIcon onClick={handleClickSettingIcon} className='hdr87settingIcon' />
                     : null
                 }
             </div>
-            <div className='gameSettingContainer'>
-               {showSetting ? <GameSettings className='gameSetting'/> : null}
+            <div className='hdr23gameSettingContainer'>
+               {showSetting ? <GameSettings className='hdr12gameSetting'/> : null}
             </div>
             {
                 breakPoint === 'mobile' ?
                     <ul>
-                        <li onClick={()=>handleTabClick("playground")} className={`${selectedTab==='playground'?'listActive':''}`}>Playground</li>
-                        <li onClick={()=>handleTabClick("leaderboard")} className={`${selectedTab==='leaderboard'?'listActive':''}`}>Leaderboard</li>
+                        <li onClick={()=>handleTabClick("playground")} className={`${selectedTab==='playground'?'hdr77listActive':''}`}>Playground</li>
+                        <li onClick={()=>handleTabClick("leaderboard")} className={`${selectedTab==='leaderboard'?'hdr77listActive':''}`}>Leaderboard</li>
                     </ul>
                 : null
             }

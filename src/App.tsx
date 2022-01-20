@@ -51,13 +51,13 @@ function App() {
   }
   const renderPlayground = () => {
     if(checkTabForMobileView("playground")){
-      return <Playground className={`playgroundGrid`}/>;
+      return <Playground className={`app87playgroundGrid`}/>;
     }
     return null;
   }
   const renderLeaderboard = () => {
     if(checkTabForMobileView("leaderboard")){
-      return <Leaderboard className={`leaderboardGrid`} /> ;
+      return <Leaderboard className={`app56leaderboardGrid`} /> ;
     }
     return null;
   }
@@ -95,12 +95,12 @@ function App() {
     }
   },[playerOne, playerTwo, winnerNoughtAndCross, dispatch, hasGameHaveWinner]);
   return (
-    <div className='appContainer'>
+    <div className='app34appContainer'>
       <Header />
       { 
         playing ? null : <GameMenuWrapper />
       }
-      <HeightBoundContainer className={'heightBoundContainer playgroundLeaderboardGrid'}>
+      <HeightBoundContainer className={'app43heightBoundContainer app38playgroundLeaderboardGrid'}>
         {renderPlayground()}
         {renderLeaderboard()}
       </HeightBoundContainer>

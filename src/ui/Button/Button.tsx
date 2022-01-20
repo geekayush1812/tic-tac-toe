@@ -4,7 +4,7 @@ import { ButtonProps } from 'types/uiTypes';
 
 const Button = ({text,className,onClick,disabled}:ButtonProps) => {
     return (
-        <button disabled={disabled} onClick={onClick} className={`button ${className ? className : ''}`}>
+        <button disabled={disabled} onClick={onClick} className={`but87button ${className ? className : ''}`}>
             <span>{text}</span>
         </button>
     )

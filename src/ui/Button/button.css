@@ -1,4 +1,4 @@
-.button {
+.but87button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,10 +10,10 @@
     border-radius: var(--roundness-s);
     cursor: pointer;
 }
-.button:disabled {
+.but87button:disabled {
     cursor:not-allowed;
     opacity: 0.4;
 }
-.button span {
+.but87button span {
     color: var(--white800);
 }
