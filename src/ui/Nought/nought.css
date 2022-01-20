@@ -1,4 +1,6 @@
 .no34noughtSvgContainer {
+    min-height: 100px;
+    min-width: 100px;
     max-width: 120px;
     max-height: 120px;
 }
