@@ -1,18 +1,5 @@
 import React from 'react';
 
-import { gameView } from './reducerTypes/gameMenuReducerTypes';
-
-export type SwitchButtonProps = {
-    selectedItem: gameView;
-    onClickItem: (item:gameView)=>void;
-    dataItems:['Standard','Inverted'];
-}
-export type SwitchButtonItemProps = {
-    children: React.ReactNode;
-    item: gameView;
-    onClick: (item:gameView)=>void;
-    selectedItem: gameView;
-}
 export type CheckboxProps = {
     checked: boolean;
     onChange: ()=>void;

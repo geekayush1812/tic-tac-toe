@@ -8,9 +8,10 @@
   --primaryColor900: hsl(274, 28%, 8%);
   --primaryColor500: hsl(274, 29%, 13%);
   --white:      hsl(274, 29%, 91%);
-  --white900:    hsl(274, 29%, 90%);
-  --white800:    hsl(274, 29%, 80%);
-  --white500:    hsl(274, 27%, 35%);
+  --white900:   hsl(274, 29%, 90%);
+  --white800:   hsl(274, 29%, 80%);
+  --white600:   hsl(274, 28%, 15%);
+  --white500:   hsl(274, 27%, 35%);
   --backdropColor:   hsla(274,28%,2%,0.6);
 
   --roundness-s: 0.5rem;
