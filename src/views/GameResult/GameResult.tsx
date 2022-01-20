@@ -7,10 +7,10 @@ import {
 } from 'react';
 import ReactDOM from 'react-dom';
 
+import { ReactComponent as DrawIcon } from 'assets/images/svg/scale.svg';
+import { ReactComponent as WinnerIcon } from 'assets/images/svg/winner.svg';
 import drawSound from 'assets/sounds/drawSound.wav';
 import winnerSound from 'assets/sounds/winSound.wav';
-import { ReactComponent as DrawIcon } from 'assets/svg/scale.svg';
-import { ReactComponent as WinnerIcon } from 'assets/svg/winner.svg';
 import { Backdrop } from 'common/Backdrop';
 import { batch } from 'react-redux';
 import {

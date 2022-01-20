@@ -1,6 +1,6 @@
 import './userCard.css';
 
-import { ReactComponent as UserIcon } from 'assets/svg/userIcon.svg';
+import { ReactComponent as UserIcon } from 'assets/images/svg/userIcon.svg';
 import { UserCardProps } from 'types/commonTypes';
 
 const UserCard = ({user}:UserCardProps) => {

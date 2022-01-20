@@ -2,7 +2,7 @@ import './switchNoughtAndCross.css';
 
 import {
   ReactComponent as ExchangeArrowIcon,
-} from 'assets/svg/exchangeArrow.svg';
+} from 'assets/images/svg/exchangeArrow.svg';
 import { SwitchNoughtAndCrossProps } from 'types/uiTypes';
 
 const SwitchNoughtAndCross = ({className,onClick}:SwitchNoughtAndCrossProps) => {
