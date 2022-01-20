@@ -1,27 +1,54 @@
 import './gameBoardGrid.css';
 
-import { useEffect } from 'react';
+import {
+  useCallback,
+  useEffect,
+} from 'react';
 
 import {
   GameBoardGridBlock,
 } from 'common/GameBoardGridBlock/GameBoardGridBlock';
-import { useSelector } from 'store/hooks';
+import { batch } from 'react-redux';
+import {
+  updateGameResult,
+  updateWinnerNoughtAndCross,
+} from 'store/actions/appAction';
+import {
+  useDispatch,
+  useSelector,
+} from 'store/hooks';
 import { blockType } from 'types/commonTypes';
+import { noughtOrCross } from 'types/reducerTypes/gameMenuReducerTypes';
 import { playgroundGridNotation } from 'utils/constants/playgroundGridNotation';
 import { checkWinner } from 'utils/helpers/checkWinner';
 
 export const GameBoardGrid = () => {
     const {gameBoardArray,crossSequence,noughtSequence}=useSelector(state=>state.playgroundReducer);
+    const dispatch = useDispatch();
+    useEffect(()=>{
+        const hasGameBoardHaveEmptyGrid = gameBoardArray.includes(playgroundGridNotation.emptyGrid);
+        if(!hasGameBoardHaveEmptyGrid){
+            dispatch(updateGameResult("draw"))
+        }
+    },[dispatch, gameBoardArray])
+    const batchUpdateWinner = useCallback((noughtOrCross:noughtOrCross)=>{
+        batch(()=>{
+            dispatch(updateGameResult("winner"));
+            dispatch(updateWinnerNoughtAndCross(noughtOrCross));
+        })
+    },[dispatch]);
+    useEffect(()=>{
+        let hasNoughtWon = checkWinner(noughtSequence);
+        if(hasNoughtWon){
+            batchUpdateWinner("nought");
+        }
+    },[batchUpdateWinner, dispatch, noughtSequence])
     useEffect(()=>{
         let hasCrossWon = checkWinner(crossSequence);
-        let hasNoughtWon = checkWinner(noughtSequence);
         if(hasCrossWon){
-            alert("cross won");
+            batchUpdateWinner("cross");
         }
-        if(hasNoughtWon){
-            alert("nought won");
-        }
-    },[crossSequence,noughtSequence])
+    },[batchUpdateWinner, crossSequence, dispatch]);
     const chooseGridType = (gridValue:number):blockType => {
         if(gridValue === playgroundGridNotation.noughtGrid) return 'nought';
         if(gridValue === playgroundGridNotation.crossGrid)  return 'cross';

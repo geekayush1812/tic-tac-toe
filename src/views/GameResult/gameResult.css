@@ -1,0 +1,78 @@
+.flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.gameResultWrapperCard {
+    width: 80%;
+    max-width: 400px;
+    padding: 0.8rem 1.2rem;
+    background-color: var(--white900);
+    border-radius: var(--roundness-s);
+    box-shadow: 0 0 12px var(--white900);
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: opacity 800ms 500ms,transform 1s 500ms;
+}
+.fadeIn {
+    opacity: 1;
+    transform: translateY(0);
+}
+.gameResultWrapperCard .resultContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem 0;
+    margin-bottom: 2rem;
+}
+.resultContainer > h2 {
+    font-size: 2rem;
+    color: var(--white500);
+    text-shadow: 0 0 7px var(--white),
+                0 0 10px var(--white),
+                0 0 42px var(--white500),
+                0 0 82px var(--white500);
+}
+.resultContainer .resultIcon {
+    max-width: 60%;
+    max-height: 300px;
+    transform: translate(0,0) rotateZ(0deg);
+    animation: resultIconTilting 1s 800ms ease-in;
+}
+.gameResultWrapperCard .actionButtonContainer {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.secondaryButton {
+    background-color: transparent;
+    transition: background-color 200ms ease-in;
+}
+.secondaryButton:hover {
+    background-color: var(--white800);
+}
+.secondaryButton span{
+    color: var(--primary800);
+}
+
+@keyframes resultIconTilting {
+    10% {
+        transform: translate(0,0) rotateZ(5deg);
+    }
+    20% {
+        transform: translate(0,0) rotateZ(-5deg);
+    }
+    30% {
+        transform: translate(0,0) rotateZ(0deg);
+    }
+    50%,80% {
+        transform: translate(0,20px) rotateZ(0deg);
+    }
+    60%,90% {
+        transform: translate(0,0) rotateZ(0deg);
+    }
+
+}

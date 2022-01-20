@@ -3,3 +3,32 @@
     width: 100%;
     background-color: var(--primaryColor900);
 }
+.heightBoundContainer {
+    background-color: var(--primaryColor800);
+}
+.playgroundLeaderboardGrid {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr minmax(400px,1fr);
+    grid-template-areas: "playground leaderboard";
+}
+.playgroundGrid {
+    grid-area: playground;
+}
+.leaderboardGrid {
+    grid-area: leaderboard;
+}
+
+@media screen and (max-width:600px) {
+    .playgroundLeaderboardGrid {
+        grid-template-columns: 1fr;
+        grid-template-areas: "commonGrid";
+    }
+    .playgroundGrid,
+    .leaderboardGrid {
+        grid-area: commonGrid;
+    }
+    .commonGrid {
+        grid-area: commonGrid;
+    }
+}

@@ -8,7 +8,7 @@ import { playgroundGridNotation } from 'utils/constants/playgroundGridNotation';
 import { pushToArray } from 'utils/helpers/pushToArray';
 
 const initialPlaygroundState:playground={
-    currentPlayer: "playerOne", // initially undefined , set it to playerOne or two (randomly) when use clicks Play or when gameBoardArray is changed
+    currentPlayer: "playerOne",
     gameBoardArray:Array(playgroundGridNotation.gridCount).fill(playgroundGridNotation.emptyGrid),
     crossSequence:[],
     noughtSequence:[]
@@ -43,6 +43,8 @@ const playgroundReducer=(
                 ...state,
                 crossSequence:updatedCrossSequence
             };
+        case playgroundActionTypes.RESET_PLAYGROUND:
+            return initialPlaygroundState;
         default:
             return state;
     }

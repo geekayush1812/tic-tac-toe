@@ -9,16 +9,18 @@ import { PlayerSettings } from 'common/PlayerSettings/PlayerSettings';
 import {
   updatePlaying,
   updateReadyToPlay,
-} from 'store/actions/gameMenuAction';
+} from 'store/actions/appAction';
 import {
   useDispatch,
   useSelector,
 } from 'store/hooks';
 import { Button } from 'ui/Button/Button';
 import { isValidPlayerName } from 'utils/helpers/isValidPlayerName';
+import { useMountAnimation } from 'utils/hooks/useMountAnimation';
 
 const GameMenu = () => {
-    const readyToPlay=useSelector(state=>state.gameMenuReducer.readyToPlay);
+    const mounted = useMountAnimation();
+    const readyToPlay=useSelector(state=>state.appReducer.readyToPlay);
     const playerOneName=useSelector(state=>state.gameMenuReducer.playerOne.name);
     const playerTwoname=useSelector(state=>state.gameMenuReducer.playerTwo.name);
     const dispatch=useDispatch();
@@ -36,7 +38,7 @@ const GameMenu = () => {
     }
     return (
         <Backdrop className='flexCenter'>
-            <div className="gameMenuWrapperCard">
+            <div className={`gameMenuWrapperCard ${mounted?'fadeIn':''}`}>
                 <h2>Game Menu</h2>
                 <GameSettings />
                 <hr className='horizontalRule' />

@@ -1,10 +1,20 @@
 import './header.css';
 
 import { ReactComponent as SettingIcon } from 'assets/svg/settingIcon.svg';
-import { useSelector } from 'store/hooks';
+import { setSelectedTab } from 'store/actions/appAction';
+import {
+  useDispatch,
+  useSelector,
+} from 'store/hooks';
+import { selectedTab } from 'types/reducerTypes/appReducerTypes';
 
 export const Header = () => {
-    const breakPoint=useSelector(state=>state.breakPointReducer.breakPoint);
+    const breakPoint = useSelector(state=>state.breakPointReducer.breakPoint);
+    const selectedTab = useSelector(state=>state.appReducer.selectedTab);
+    const dispatch = useDispatch();
+    const handleTabClick = (tab:selectedTab)=>{
+        dispatch(setSelectedTab(tab));
+    }
     return (
         <nav>
             <div className="headerWrapper">
@@ -18,8 +28,8 @@ export const Header = () => {
             {
                 breakPoint === 'mobile' ?
                     <ul>
-                        <li className='listActive'>Playground</li>
-                        <li>Leaderboard</li>
+                        <li onClick={()=>handleTabClick("playground")} className={`${selectedTab==='playground'?'listActive':''}`}>Playground</li>
+                        <li onClick={()=>handleTabClick("leaderboard")} className={`${selectedTab==='leaderboard'?'listActive':''}`}>Leaderboard</li>
                     </ul>
                 : null
             }

@@ -14,9 +14,7 @@ const initialGameMenuState:gameMenu={
     playerTwo:{
         name:'',
         noughtOrCross:'cross'
-    },
-    readyToPlay:false,
-    playing:false,
+    }
 };
 
 const gameMenuReducer=(
@@ -62,16 +60,8 @@ const gameMenuReducer=(
                     noughtOrCross:state.playerOne.noughtOrCross,
                 }
             };
-        case gameMenuActionTypes.UPDATE_READY_TO_PLAY:
-            return {
-                ...state,
-                readyToPlay:action.payload
-            }
-        case gameMenuActionTypes.UPDATE_PLAYING:
-            return {
-                ...state,
-                playing:action.payload
-            }
+        case gameMenuActionTypes.RESET_GAME_MENU:
+            return initialGameMenuState;
         default:
             return state;
     }

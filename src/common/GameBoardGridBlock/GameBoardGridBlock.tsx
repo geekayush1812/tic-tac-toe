@@ -1,6 +1,5 @@
 import './gameBoardGridBlock.css';
 
-import { batch } from 'react-redux';
 import {
   pushToCrossSequence,
   pushToNoughtSequence,
@@ -11,7 +10,10 @@ import {
   useDispatch,
   useSelector,
 } from 'store/hooks';
-import { GameBoardGridBlockProps } from 'types/commonTypes';
+import {
+  GameBoardGridBlockProps,
+  getCurrentPlayerGridNotation,
+} from 'types/commonTypes';
 import { Cross } from 'ui/Cross/Cross';
 import { Nought } from 'ui/Nought/Nought';
 import { playgroundGridNotation } from 'utils/constants/playgroundGridNotation';
@@ -19,18 +21,27 @@ import { playgroundGridNotation } from 'utils/constants/playgroundGridNotation';
 export const GameBoardGridBlock = ({blockType,gridIndex}:GameBoardGridBlockProps) => {
     const currentPlayer = useSelector(state=>state.playgroundReducer.currentPlayer)
     const gameReducerState = useSelector(state=>state.gameMenuReducer);
+    const gameResult = useSelector(state=>state.appReducer.gameResult);
     const dispatch = useDispatch();
+    const getCurrentPlayerGridNotation:getCurrentPlayerGridNotation = (currentPlayer) => {
+        const currentPlayerNoughtOrCross = gameReducerState[currentPlayer].noughtOrCross;
+        return playgroundGridNotation[`${currentPlayerNoughtOrCross}Grid`];
+    }
+    const toggleCurrentPlayer = () => {
+        return currentPlayer === 'playerOne' ? 'playerTwo' : 'playerOne';
+    }
     const handleClickGridBlock=()=>{
-        if(currentPlayer){
-            batch(()=>{
-                dispatch(updateGameBoardArray(gridIndex,playgroundGridNotation[`${gameReducerState[currentPlayer].noughtOrCross}Grid`]))
-                if(gameReducerState[currentPlayer].noughtOrCross === 'nought'){
-                    dispatch(pushToNoughtSequence(gridIndex));
-                }else{
-                    dispatch(pushToCrossSequence(gridIndex));
-                }
-                dispatch(updateCurrentPlayer(currentPlayer==='playerOne'?'playerTwo':'playerOne'))
-            })
+        const isBlockEmpty = blockType === 'empty';
+        const gameNotHasWinner = gameResult === undefined;
+        if(currentPlayer && isBlockEmpty && gameNotHasWinner){
+            dispatch(updateGameBoardArray(gridIndex,getCurrentPlayerGridNotation(currentPlayer)));
+            const hasCurrentPlayerHaveNought = gameReducerState[currentPlayer].noughtOrCross === 'nought';
+            if(hasCurrentPlayerHaveNought){
+                dispatch(pushToNoughtSequence(gridIndex));
+            }else{
+                dispatch(pushToCrossSequence(gridIndex));
+            }
+            dispatch(updateCurrentPlayer(toggleCurrentPlayer()))
         }
     }
     

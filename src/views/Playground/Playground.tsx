@@ -1,23 +1,17 @@
 import './playground.css';
 
-import {
-  useLayoutEffect,
-  useRef,
-  useState,
-} from 'react';
-
 import { ActivePlayer } from 'common/ActivePlayer/ActivePlayer';
 import { GameBoardGrid } from 'common/GameBoardGrid/GameBoardGrid';
+import { useSelector } from 'store/hooks';
+import { playgroundProps } from 'types/viewsTypes';
 
-export const Playground = () => {
-    const playgroundElementRef = useRef<HTMLElement>(null);
-    const [playgroundElementHeight,setPlaygroundElementHeight]=useState('0%');
-    useLayoutEffect(()=>{
-        const elementYposition=playgroundElementRef.current?.getBoundingClientRect().y
-        setPlaygroundElementHeight(`calc(100% - ${elementYposition}px)`)
-    },[])
+export const Playground = ({className}:playgroundProps) => {
+    const breakPoint=useSelector(state=>state.breakPointReducer.breakPoint);
     return (
-        <section ref={playgroundElementRef} style={{height:playgroundElementHeight}} className="playground">
+        <section className={`playground ${className ? className : ''}`}>
+            {
+                breakPoint === 'mobile' ? null : <h2>Playground</h2>
+            }
             <div className="playgroundGridContainer">
                 <ActivePlayer />
                 <GameBoardGrid />
