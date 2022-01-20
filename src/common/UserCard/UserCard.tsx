@@ -1,21 +1,22 @@
 import './userCard.css';
 
 import { ReactComponent as UserIcon } from 'assets/svg/userIcon.svg';
+import { UserCardProps } from 'types/commonTypes';
 
-export const UserCard = () => {
+export const UserCard = ({user}:UserCardProps) => {
      return (
          <div className='userCardContainer'>
              <UserIcon className='userIcon' />
              <div className="userDetailsContainer">
-                 <span className='userName'>Ayush</span>
+                 <span className='userName'>{user.name}</span>
                  <div className="winsAndLosses">
                      <div className="winsContainer">
                         <span>Wins : </span>
-                        <span>4</span>
+                        <span>{user.wonMatches}</span>
                      </div>
                      <div className="lossesContainer">
                          <span>Losses : </span>
-                         <span>5</span>
+                         <span>{user.lostMatches}</span>
                      </div>
                  </div>
              </div>

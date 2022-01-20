@@ -1,4 +1,5 @@
 import { currentPlayer } from './reducerTypes/playgroundReducerTypes';
+import { leaderboardUser } from './viewsTypes';
 
 export type BackdropProps = {
     children: React.ReactNode;
@@ -12,5 +13,8 @@ export type GameBoardGridBlockProps = {
 export type HeightBoundContainerProps = {
     children?: React.ReactNode;
     className?: string;
+}
+export type UserCardProps = {
+    user:leaderboardUser
 }
 export type getCurrentPlayerGridNotation = (currentPlayer:Exclude<currentPlayer,undefined>) => number;
