@@ -18,3 +18,6 @@ export type UserCardProps = {
     user:leaderboardUser
 }
 export type getCurrentPlayerGridNotation = (currentPlayer:Exclude<currentPlayer,undefined>) => number;
+export type GameSettingsProps = {
+    className?: string;
+}

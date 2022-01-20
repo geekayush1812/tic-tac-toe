@@ -1,7 +1,8 @@
 nav {
     background-color: var(--primaryColor900);
 }
-.headerWrapper {
+.headerWrapper,
+.gameSettingContainer{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,6 +26,12 @@ nav {
 .settingIcon > circle {
     stroke: var(--white800);
 }
+.gameSettingContainer {
+    padding: 0.5rem 0;
+}
+.gameSetting {
+    margin-top: 0 !important;
+}
 nav > ul {
     list-style-type: none;
     display: flex;
@@ -37,6 +44,7 @@ nav > ul > li {
     padding: 0.8rem 1rem;
     color: var(--white500);
     background-color: var(--primaryColor900);
+    cursor: pointer;
 }
 li.listActive {
     color: var(--white);  
