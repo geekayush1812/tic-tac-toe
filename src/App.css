@@ -2,9 +2,18 @@
     height: 100%;
     width: 100%;
     background-color: var(--primaryColor900);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content 1fr;
+    grid-template-areas: "header"
+                         "main";
 }
-.app43heightBoundContainer {
+.app76header {
+    grid-area: header;
+}
+.app43mainContainer {
     background-color: var(--primaryColor800);
+    grid-area: main;
 }
 .app38playgroundLeaderboardGrid {
     display: grid;

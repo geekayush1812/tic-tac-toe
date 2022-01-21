@@ -16,7 +16,7 @@ import {
 } from 'store/hooks';
 import { selectedTab } from 'types/reducerTypes/appReducerTypes';
 
-const Header = () => {
+const Header = ({className}:{className?:string}) => {
     const breakPoint = useSelector(state=>state.breakPointReducer.breakPoint);
     const selectedTab = useSelector(state=>state.appReducer.selectedTab);
     const [showSetting,setShowSetting] = useState(breakPoint==='mobile'?false:true);
@@ -37,7 +37,7 @@ const Header = () => {
        setShowSetting(value=>!value);
     }
     return (
-        <nav>
+        <nav className={className?className:''}>
             <div className="hdr87headerWrapper">
                 <h1>Tic Tac Toe</h1>
                 {

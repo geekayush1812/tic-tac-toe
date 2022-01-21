@@ -3,7 +3,6 @@ import './App.css';
 import { useEffect } from 'react';
 
 import { Header } from 'common/Header';
-import { HeightBoundContainer } from 'common/HeightBoundContainer';
 import { updateBreakPoint } from 'store/actions/breakPointsAction';
 import { updateLeaderboard } from 'store/actions/leaderboardAction';
 import {
@@ -100,10 +99,10 @@ function App() {
       { 
         playing ? null : <GameMenuWrapper />
       }
-      <HeightBoundContainer className={'app43heightBoundContainer app38playgroundLeaderboardGrid'}>
+      <div className={'app43mainContainer app38playgroundLeaderboardGrid'}>
         {renderPlayground()}
         {renderLeaderboard()}
-      </HeightBoundContainer>
+      </div>
       {
         showGameResult ? <GameResult /> : null
       }
